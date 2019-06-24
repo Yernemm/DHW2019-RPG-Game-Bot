@@ -16,7 +16,7 @@ exports.run = (data) => {
 
     //PREPARE FILESYSTEM
 
-    const dir = '';
+    const dir = './commands/';
     const fs = require('fs');
 
     //--FETCH ALL COMMAND INFO--
@@ -35,6 +35,7 @@ exports.run = (data) => {
     let count = 0;
 
     //INSTANTIATE CMD OBJECTS
+    cosole.log('CWD: '+process.cwd());
     fs.readdirSync(dir).forEach(file => {
 
         if (file.endsWith(".js")) {
