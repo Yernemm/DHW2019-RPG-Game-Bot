@@ -18,7 +18,13 @@ client.on("message", message=> {
     const argsTxt = message.content.slice(config.prefix.length + command.length).trim();
 
     let commandFile = require(`./commands/${command}.js`);
-    let output = commandFile.run(command,argsArr,argsTxt,client, message);
+    let data = {
+        command: command,
+        argsArr: argsArr,
+        argsTxt: argsTxt,
+        client: client,
+        message: message};
+    let output = commandFile.run(data);
     console.log(message.content + "   |   " + output); //Simple temporary command logging.
 })
 
