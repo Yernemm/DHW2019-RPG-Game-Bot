@@ -14,7 +14,7 @@ exports.run = (data) => {
 
     //COMMAND LOGIC HERE:
 
-    msg = "you're mom doo doo";
+    msg = "you're mom doo doo haha gae";
 
 
     //--------------------------------------------------------------------
