@@ -4,7 +4,7 @@ const usage = ""; //Any parameters required for command.
 const cmdtype = ""; //Type of command
 //Command
 exports.run = (data) => {
-    // data contains: command, argsArr, argsTxt, client, message
+    // data contains: command, argsArr, argsTxt, client, message, config
     //e.g. to get arguments array, use data.argsArr.
     //--------------------------------------------------------------------
 

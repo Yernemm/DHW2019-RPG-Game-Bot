@@ -23,7 +23,8 @@ client.on("message", message=> {
         argsArr: argsArr,
         argsTxt: argsTxt,
         client: client,
-        message: message};
+        message: message,
+        config: config};
     let output = commandFile.run(data);
     let logText = message.content + "   |   " + output
     console.log(logText); //Simple temporary command logging.
