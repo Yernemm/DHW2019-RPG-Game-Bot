@@ -1,21 +1,18 @@
 const discord = require('discord.js');
 module.exports = {
     logCmd: function (data, output) {
-        console.log(generateLogText(data,output));
+        console.log(generateConsoleText(data,output));
         sendDiscordLog(data, output, data.config.logChannel);
     },
     logTxt: function (client, config, text){
         console.log(getTimeStamp() + ' ' + text)
-        client.channels.get(config.logChannel).send(text,  generateDiscordTimestampEmbed() )
+        client.channels.get(config.logChannel).send('```\n' + text + '\n```',  generateDiscordTimestampEmbed() )
     }
 }
 
 
 function generateLogText(data, output){
-    return 
-    `\`[${data.message.author.user.tag}] ${data.message.content}\`
-    
-    ${output}`
+    return `\`[${data.message.author.tag}]: ${data.message.content}\`\n\`[Response]:${output}\``
 }
 
 function generateConsoleText(data,output){
