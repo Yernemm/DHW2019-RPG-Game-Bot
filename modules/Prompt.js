@@ -1,18 +1,35 @@
 const { Collection } = require('discord.js');
 const exit = require('./emojis.js').exit;
 
+function isFunction(functionToCheck) {
+  return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
+}
+
 class Choice {
   /**
    * Creates a new Choice instance.
    * @param {Prompt} dest The destination Prompt
    * @param {String} emoji The reaction emoji in unicode string form
-   * @param {String} text The flavor text for this Choice
+   * @param {String|Function} text The flavor text for this Choice. If a function, the property will become a getter
    * @param {Boolean} enabled Whether this Choice should be shown or not (defaults to `true`)
    */
   constructor(dest, emoji, text, enabled = true) {
     this.dest = dest;
     this.emoji = emoji;
-    this.text = text;
+    if (isFunction(text)) {
+      Object.defineProperty(this, 'text', {
+        configurable: true,
+        enumerable: true,
+        get: text
+      });
+    } else {
+      Object.defineProperty(this, 'text', {
+        configurable: true,
+        enumerable: true,
+        value: text,
+        writable: true
+      });
+    }
     this.enabled = enabled;
     this.parent = null;
   }
@@ -23,6 +40,14 @@ class Choice {
    */
   get formatted() {
     return this.emoji + ': ' + this.text;
+  }
+
+  /**
+   * Index of the Choice in the parent Prompt's Choice array
+   * @type {Number}
+   */
+  get index() {
+    return this.parent.choices.indexOf(this);
   }
 
   /**
@@ -52,12 +77,25 @@ class Prompt {
   /**
    * Creates a new Prompt instance.
    * @param {*} id The ID of this Prompt
-   * @param {String} text The flavor text for this Prompt
+   * @param {String|Function} text The flavor text for this Prompt. If a function, the property will become a getter
    * @param {Array<Choice>} choices An array of Choice objects to be attached to this Prompt
    */
   constructor(id, text, choices) {
     this.id = id;
-    this.text = text;
+    if (isFunction(text)) {
+      Object.defineProperty(this, 'text', {
+        configurable: true,
+        enumerable: true,
+        get: text
+      });
+    } else {
+      Object.defineProperty(this, 'text', {
+        configurable: true,
+        enumerable: true,
+        value: text,
+        writable: true
+      });
+    }
     this.choices = choices.map((choice) => choice.assign(this));
   }
 
