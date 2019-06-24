@@ -37,7 +37,7 @@ client.on('error', (error) => {
 
 client.on('ready', () => {
   console.log(`Bot started on ${client.user.tag}`);
-  client.channels.get(config.logChannel).send("```HEWWO I AM NOW ONLINE UWU```");
+  client.channels.get(config.logChannel).send("```HEWWO I AM NAO ONLINE UWU```");
 });
 
 client.on('rateLimit', (info) => {
