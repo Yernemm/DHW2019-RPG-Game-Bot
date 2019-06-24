@@ -105,7 +105,7 @@ module.exports = {
                     let file = require(`./${cmd}.js`);
 
                     let de = file.desc;
-                    let us = file.use;
+                    let us = file.usage;
                     msg = `**Help for ${data.config.prefix}${cmd}**\r\n${de}\r\nUsage: ${data.config.prefix}${cmd} ${us}`;
                 } catch (err) {
                     msg = `Command \"${data.argsTxt}\" not found.\r\nUse **>help** to see available commands.`
