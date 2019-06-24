@@ -4,7 +4,7 @@
   "description": "Discord Hack Week 2019 RPG Game Bot",
   "main": "server.js",
   "dependencies": {
-
+    "discord.js": "^11.5.1"
   },
   "devDependencies": {
     "mocha": "^6.1.4"
@@ -21,8 +21,5 @@
   "bugs": {
     "url": "https://github.com/Yernemm/DHW2019-RPG-Game-Bot/issues"
   },
-  "homepage": "https://github.com/Yernemm/DHW2019-RPG-Game-Bot#readme",
-  "dependencies": {
-    "discord.js": "^11.5.1"
-  }
+  "homepage": "https://github.com/Yernemm/DHW2019-RPG-Game-Bot#readme"
 }
