@@ -1,9 +1,9 @@
+module.exports.status = "init";
 const discord = require("discord.js");
 const client = new discord.Client();
 
 //This holds the token and some configurable data.
 const config = require('./config.json');
-module.exports.status = "init";
 
 //Command handler for messages.
 client.on("message", (message) => {
@@ -33,13 +33,11 @@ client.on("message", (message) => {
 
 client.on('error', (error) => {
   console.error('The WebSocket encountered an error:', error);
-  module.exports.status = "error";
 });
 
 client.on('ready', () => {
   console.log(`Bot started on ${client.user.tag}`);
   client.channels.get(config.logChannel).send("```HEWWO I AM NOW ONLINE UWU```");
-  module.exports.status = "online";
 });
 
 client.on('rateLimit', (info) => {
@@ -47,3 +45,4 @@ client.on('rateLimit', (info) => {
 });
 
 client.login(config.token);
+module.exports.status = "loaded";
