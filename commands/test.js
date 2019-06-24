@@ -1,5 +1,5 @@
 exports = {
-    run: function (data) {
+    run: (data) => {
         // data contains: command, argsArr, argsTxt, client, message
         //e.g. to get arguments array, use data.argsArr.
         //--------------------------------------------------------------------
