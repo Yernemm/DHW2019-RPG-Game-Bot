@@ -16,7 +16,7 @@ exports.run = (data) => {
 
     //PREPARE FILESYSTEM
 
-    const dir = './commands/';
+    const dir = '/commands/';
     const fs = require('fs');
 
     //--FETCH ALL COMMAND INFO--
@@ -54,7 +54,7 @@ exports.run = (data) => {
     })
 
     //CMD CLASS FUNCTIONS AND METHODS:
-    
+
     function onlyUnique(value, index, self) {
         return self.indexOf(value) === index;
     }
