@@ -35,7 +35,7 @@ exports.run = (data) => {
     let count = 0;
 
     //INSTANTIATE CMD OBJECTS
-    fs.readdirSync(dir).forEach(file => {
+    fs.readdirSync(dir).filter(file => !file.contains("TEMPLATE")).forEach(file => {
 
         if (file.endsWith(".js")) {
             let cmdfile = require(`./${file}`);
