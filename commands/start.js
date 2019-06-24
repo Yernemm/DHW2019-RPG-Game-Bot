@@ -28,7 +28,7 @@ module.exports = {
     .then(() => prompt.react('🏃'))
     .then(() => prompt.react('❌'))
     .catch(() => console.error('One of the emojis failed to react.'));
-  }).catch(() => console.error('Text failed to send.'));
+  }).catch(() => console.error('Text failed to send...'));
 
 //------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------------------------------------------------------------------------------------------------    
