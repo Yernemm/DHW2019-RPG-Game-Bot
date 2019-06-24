@@ -18,7 +18,8 @@ client.on("message", message=> {
     const argsTxt = message.content.slice(config.prefix.length + command.length).trim();
 
     let commandFile = require(`./commands/${command}.js`);
-    commandFile.run(command,argsArr,argsTxt,client);
+    let output = commandFile.run(command,argsArr,argsTxt,client);
+    console.log(message.content + "   |   " + output); //Simple temporary command logging.
 })
 
 client.on('error', error => {
