@@ -14,7 +14,7 @@ exports.run = (data) => {
 
     //COMMAND LOGIC HERE:
 
-    msg = "hewwo worl owo";
+    msg = "hewwo worl owo\r\n" + process.cwd();
 
 
     //--------------------------------------------------------------------

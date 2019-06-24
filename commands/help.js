@@ -16,7 +16,7 @@ exports.run = (data) => {
 
     //PREPARE FILESYSTEM
 
-    const dir = '/commands/';
+    const dir = '';
     const fs = require('fs');
 
     //--FETCH ALL COMMAND INFO--
