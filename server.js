@@ -20,3 +20,9 @@ client.on("message", message=> {
     let commandFile = require(`./commands/${command}.js`);
     commandFile.run(command,argsArr,argsTxt,client);
 })
+
+client.on('error', error => {
+    console.error('The WebSocket encountered an error:', error);
+  });
+
+  client.login(config.token);
