@@ -1,5 +1,5 @@
-exports = {
-    run: function (data) {
+module.exports = {
+    run: (data) => {
         const { desc, usage, cmdtype } = this;
         // data contains: command, argsArr, argsTxt, client, message
         //e.g. to get arguments array, use data.argsArr.
