@@ -1,9 +1,18 @@
+//-------------------------
+//METADATA
+var desc = "Shows help information"
+var usage = "[command]"
+var cmdtype = "help"
+//-------------------------
+
+//😋😝😜😛
 module.exports = {
     run: (data) => {
         const { desc, usage, cmdtype } = this;
         // data contains: command, argsArr, argsTxt, client, message
         //e.g. to get arguments array, use data.argsArr.
-
+//------------------------------------------------------------------------------------------------------------------------------~~
+//------------------------------------------------------------------------------------------------------------------------------~~
         //COMMAND LOGIC HERE:
 
         //PREPARE FILESYSTEM
@@ -113,11 +122,12 @@ module.exports = {
 
                 break;
         }
-
+//------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------------------------------------------------------------------------------------------------
         data.message.channel.send(msg);
         return msg;
     },
-    desc: "Shows help information",
-    usage: "[command]",
-    cmdtype: "help",
+    desc: desc,
+    usage: usage,
+    cmdtype: cmdtype
 }
