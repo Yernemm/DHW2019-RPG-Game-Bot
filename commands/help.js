@@ -35,9 +35,10 @@ exports.run = (data) => {
     let count = 0;
 
     //INSTANTIATE CMD OBJECTS
-    fs.readdirSync(dir).filter(file => !file.includes("TEMPLATE")).forEach(file => {
-
-        if (file.endsWith(".js")) {
+    fs.readdirSync(dir)
+      .filter(file => !file.includes("TEMPLATE"))
+        .filter(file => file.endswith(".js"))
+          .forEach(file => {
             let cmdfile = require(`./${file}`);
 
             cmdObj[count] = new cmdClass(count);
@@ -49,9 +50,7 @@ exports.run = (data) => {
             cmdObj[count].type = cmdfile.cmdtype();
 
             count++;
-        }
-
-    })
+          })
 
     //CMD CLASS FUNCTIONS AND METHODS:
 
