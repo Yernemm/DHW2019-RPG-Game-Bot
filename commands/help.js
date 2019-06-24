@@ -1,7 +1,7 @@
 //METADATA
-const desc = ""; //Short description of what the command does.
-const usage = ""; //Any parameters required for command.
-const cmdtype = ""; //Type of command
+const desc = "Shows help information"; //Short description of what the command does.
+const usage = "[command]"; //Any parameters required for command.
+const cmdtype = "help"; //Type of command
 //Command
 exports.run = (data) => {
     // data contains: command, argsArr, argsTxt, client, message
