@@ -54,6 +54,10 @@ exports.run = (data) => {
     })
 
     //CMD CLASS FUNCTIONS AND METHODS:
+    
+    function onlyUnique(value, index, self) {
+        return self.indexOf(value) === index;
+    }
 
     function getAllTypes(){
         var types = [];
@@ -79,12 +83,12 @@ exports.run = (data) => {
     }
 
     var msg = "error";
-    switch (argsTxt) {
+    switch (data.argsTxt) {
         case null:
         case "":
         case " ":
 
-            msg = `**Discord Hack Week 2019  RPG Game Bot\r\nTo get help for a specific command, do ${config.prefix}help [command]\r\n\r\n`;
+            msg = `**Discord Hack Week 2019  RPG Game Bot\r\nTo get help for a specific command, do ${data.config.prefix}help [command]\r\n\r\n`;
 
 
             msg += "Commands:\r\n"
@@ -106,15 +110,15 @@ exports.run = (data) => {
             break;
             default:
 
-            let cmd = argsTxt;
+            let cmd = data.argsTxt;
             try {
                 let file = require(`./${cmd}.js`);
 
                 let de = file.desc();
                 let us = file.use();
-                msg = `**Help for ${config.prefix}${cmd}**\r\n${de}\r\nUsage: ${config.prefix}${cmd} ${us}`;
+                msg = `**Help for ${data.config.prefix}${cmd}**\r\n${de}\r\nUsage: ${data.config.prefix}${cmd} ${us}`;
             } catch (err) {
-                msg = `Command \"${argsTxt}\" not found.\r\nUse **>help** to see available commands.`
+                msg = `Command \"${data.argsTxt}\" not found.\r\nUse **>help** to see available commands.`
             }
 
             break;

@@ -4,12 +4,10 @@ const client = new discord.Client();
 //This holds the token and some configurable data.
 const config = require('./config.json'); 
 
-
-
 //Command handler for messages.
-client.on("message", message=> {
+client.on("message", (message) => {
     if (message.author.bot) return; //Ignore messages from other bots and itself.
-    if (message.channel.type != "text") return; //Only look in server text channels.
+    if (!message.channel.guild) return; //Only look in server text channels.
     if (message.content.indexOf(config.prefix) !== 0) return; //Only respond to commands which use the command prefix.
 
     //Split up the message into data to be used by commands.
@@ -23,20 +21,26 @@ client.on("message", message=> {
         argsArr: argsArr,
         argsTxt: argsTxt,
         client: client,
-        message: message};
+        message: message,
+        config: config
+    };
     let output = commandFile.run(data);
-    let logText = message.content + "   |   " + output
+    let logText = "```" + message.content + "   |   " + output + "```";
     console.log(logText); //Simple temporary command logging.
     client.channels.get(config.logChannel).send(logText);
 })
 
-client.on('error', error => {
-    console.error('The WebSocket encountered an error:', error);
-  });
+client.on('error', (error) => {
+  console.error('The WebSocket encountered an error:', error);
+});
 
-  client.on('ready', () => {
-    console.log(`Bot started on ${client.user.tag}`);
-    client.channels.get(config.logChannel).send("HEWWO I AM NOW ONLINE UWU");
-  });
+client.on('ready', () => {
+  console.log(`Bot started on ${client.user.tag}`);
+  client.channels.get(config.logChannel).send("```HEWWO I AM NOW ONLINE UWU```");
+});
 
-  client.login(config.token);
+client.on('rateLimit', (info) => {
+  console.log(`RateLimit: ${info.method.toUpperCase()} ${info.timeDifference}ms ${info.path}`);
+});
+
+client.login(config.token);

@@ -1,7 +1,7 @@
 //METADATA
-const desc = ""; //Short description of what the command does.
+const desc = "A first testing command."; //Short description of what the command does.
 const usage = ""; //Any parameters required for command.
-const cmdtype = ""; //Type of command
+const cmdtype = "test"; //Type of command
 //Command
 exports.run = (data) => {
     // data contains: command, argsArr, argsTxt, client, message
@@ -14,7 +14,7 @@ exports.run = (data) => {
 
     //COMMAND LOGIC HERE:
 
-    msg = "you're mom doo doo haha gae";
+    msg = "hewwo worl owo";
 
 
     //--------------------------------------------------------------------
