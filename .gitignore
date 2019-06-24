@@ -62,3 +62,6 @@ typings/
 
 # contains token (secret)
 config.json
+
+# omnoid's IDE file
+.idea/
