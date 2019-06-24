@@ -1,8 +1,8 @@
 var assert = require('assert');
-var test = true;
+var bot = require('../server.js');
 
-describe('test', ()=>{
-  it('should be true', ()=>{
-    assert.equal(test, true);
+describe('bot', ()=>{
+  it('should be online', ()=>{
+    assert.equal(bot, "online");
   });
 });
