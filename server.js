@@ -1,5 +1,5 @@
 const discord = require("discord.js");
-const client = new discord.client();
+const client = new discord.Client();
 
 //This holds the token and some configurable data.
 const config = require('./config.json'); 
@@ -18,7 +18,7 @@ client.on("message", message=> {
     const argsTxt = message.content.slice(config.prefix.length + command.length).trim();
 
     let commandFile = require(`./commands/${command}.js`);
-    let output = commandFile.run(command,argsArr,argsTxt,client);
+    let output = commandFile.run(command,argsArr,argsTxt,client, message);
     console.log(message.content + "   |   " + output); //Simple temporary command logging.
 })
 

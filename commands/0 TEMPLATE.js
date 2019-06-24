@@ -3,7 +3,7 @@ const desc = ""; //Short description of what the command does.
 const usage = ""; //Any parameters required for command.
 const cmdtype = ""; //Type of command
 //Command
-exports.run = (command, argsArr, argsTxt, client) => {
+exports.run = (command, argsArr, argsTxt, client, message) => {
     //--------------------------------------------------------------------
     //Uncomment for protected owner-only command.
     //if(message.author.id !== config.ownerID) return; 
