@@ -1,12 +1,18 @@
 const { Collection } = require('discord.js');
 
-var playerList = new Collection();
+var userList = new Collection();
+
+class GameUser {
+  constructor() {
+    
+  }
+}
 
 class Player {
-  
+
 }
 
 module.exports = {
   Player,
-  playerList
+  userList
 };
