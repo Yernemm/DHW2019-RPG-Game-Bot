@@ -1,4 +1,5 @@
 {
     "token": "hahathisisaveryrealtokenhahapleasedontstealmybot",
-    "prefix": ";"
+    "prefix": ";",
+    "logChannel": "enterlogchannelidhere"
   }

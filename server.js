@@ -25,11 +25,18 @@ client.on("message", message=> {
         client: client,
         message: message};
     let output = commandFile.run(data);
-    console.log(message.content + "   |   " + output); //Simple temporary command logging.
+    let logText = message.content + "   |   " + output
+    console.log(logText); //Simple temporary command logging.
+    client.channels.get(config.logChannel).send(logText);
 })
 
 client.on('error', error => {
     console.error('The WebSocket encountered an error:', error);
+  });
+
+  client.on('ready', () => {
+    console.log(`Bot started on ${client.user.tag}`);
+    client.channels.get(config.logChannel).send("HEWWO I AM NOW ONLINE UWU");
   });
 
   client.login(config.token);
