@@ -3,7 +3,9 @@ const desc = ""; //Short description of what the command does.
 const usage = ""; //Any parameters required for command.
 const cmdtype = ""; //Type of command
 //Command
-exports.run = (command, argsArr, argsTxt, client, message) => {
+exports.run = (data) => {
+    // data contains: command, argsArr, argsTxt, client, message
+    //e.g. to get arguments array, use data.argsArr.
     //--------------------------------------------------------------------
     //Uncomment for protected owner-only command.
     //if(message.author.id !== config.ownerID) return; 
@@ -17,7 +19,7 @@ exports.run = (command, argsArr, argsTxt, client, message) => {
 
 
     //--------------------------------------------------------------------
-   message.channel.send(msg);
+   data.message.channel.send(msg);
    return msg;
 }
 exports.desc = () =>{
