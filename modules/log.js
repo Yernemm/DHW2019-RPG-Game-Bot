@@ -1,15 +1,15 @@
 const discord = require('discord.js');
 module.exports = {
-    log: function (data, output, channel) {
+    logCmd: function (data, output) {
         console.log(generateLogText(data,output));
-        sendDiscordLog(data, output, channel);
+        sendDiscordLog(data, output, data.config.logChannel);
     },
+    logTxt: function (client, config, text){
+        console.log(getTimeStamp() + ' ' + text)
+        client.channels.get(config.logChannel).send(text,  generateDiscordTimestampEmbed() )
+    }
 }
 
-
-function log(logChannel){
-
-}
 
 function generateLogText(data, output){
     return 
@@ -21,14 +21,19 @@ function generateLogText(data, output){
 function generateConsoleText(data,output){
     return getTimeStamp() + ' ' + generateLogText(data,output);
 }
-
+//Two functions below are currently identical but they will be expanded upon in the future. Do not delete.
 function generateDiscordLogEmbed(data, output){
     return new discord.RichEmbed()
     .setTimestamp();
 }
 
+function generateDiscordTimestampEmbed(){
+    return new discord.RichEmbed()
+    .setTimestamp();
+}
+
 function sendDiscordLog(data, output, channel){
-    channel.send(generateLogText(data, output), {generateDiscordLogEmbed(data, output)})
+    data.client.channels.get(channel).send(generateLogText(data, output), generateDiscordLogEmbed(data, output))
 }
 
 function getTimeStamp(){
@@ -39,4 +44,12 @@ function getTimeStamp(){
 function formDate() {
     var d = new Date();
     return d.getUTCFullYear() + "/" + lZero((d.getUTCMonth() + 1), 2) + "/" + lZero(d.getUTCDate(), 2) + " " + lZero(d.getUTCHours(), 2) + ":" + lZero(d.getUTCMinutes(), 2) + ":" + lZero(d.getUTCSeconds(), 2);
+}
+
+function lZero(num, digits) {
+    var zeroes = "";
+    for (i = 0; i < digits; i++) {
+        zeroes += "0";
+    }
+    return (zeroes + num).slice(- digits);
 }

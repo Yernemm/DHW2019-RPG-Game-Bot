@@ -5,6 +5,8 @@ const client = new discord.Client();
 //This holds the token and some configurable data.
 const config = require('./config.json');
 
+const log = require('./modules/log.js');
+
 //Command handler for messages.
 client.on("message", (message) => {
     if (message.author.bot) return; //Ignore messages from other bots and itself.
@@ -26,9 +28,7 @@ client.on("message", (message) => {
         config: config
     };
     let output = commandFile.run(data);
-    let logText = "```" + message.content + "   |   " + output + "```";
-    console.log(logText); //Simple temporary command logging.
-    client.channels.get(config.logChannel).send(logText);
+    log.logCmd(data,output);
 })
 
 client.on('error', (error) => {
@@ -36,8 +36,10 @@ client.on('error', (error) => {
 });
 
 client.on('ready', () => {
-  console.log(`Bot started on ${client.user.tag}`);
-  client.channels.get(config.logChannel).send("```HEWWO I AM NAO ONLINE UWU```");
+  log.logTxt(client, config,
+    `Bot started on ${client.user.tag}
+    HEWWO I AM NAO ONLINE UWU`
+  );
 });
 
 client.on('rateLimit', (info) => {
