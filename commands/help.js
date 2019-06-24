@@ -35,7 +35,7 @@ exports.run = (data) => {
     let count = 0;
 
     //INSTANTIATE CMD OBJECTS
-    cosole.log('CWD: '+process.cwd());
+    console.log('CWD: '+process.cwd());
     fs.readdirSync(dir).forEach(file => {
 
         if (file.endsWith(".js")) {
