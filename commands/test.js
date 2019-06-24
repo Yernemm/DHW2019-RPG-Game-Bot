@@ -7,8 +7,7 @@ exports.run = (data) => {
     // data contains: command, argsArr, argsTxt, client, message
     //e.g. to get arguments array, use data.argsArr.
     //--------------------------------------------------------------------
-    //Uncomment for protected owner-only command.
-    //if(message.author.id !== config.ownerID) return; 
+
     //--------------------------------------------------------------------
     let msg = "" //Message to return to user (will be logged)
     //--------------------------------------------------------------------
