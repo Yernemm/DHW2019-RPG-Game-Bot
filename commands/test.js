@@ -20,13 +20,13 @@ exports.run = (data) => {
     //--------------------------------------------------------------------
    data.message.channel.send(msg);
    return msg;
-}
+};
 exports.desc = () =>{
     return desc;
-}
+};
 exports.use = () =>{
     return usage;
-}
+};
 exports.cmdtype = () => {
     return cmdtype;
-}
+};
