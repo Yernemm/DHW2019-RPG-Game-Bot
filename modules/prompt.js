@@ -7,6 +7,18 @@ function isFunction(functionToCheck) {
 
 class Choice {
   /**
+   * Creates a new Choice instance, and returns it. This should be used instead of `new Choice` as you can call `.handle` on it without worrying about it breaking
+   * @param {Prompt} dest The destination Prompt
+   * @param {String} emoji The reaction emoji in unicode string form
+   * @param {String|Function} text The flavor text for this Choice. If a function, the property will become a getter
+   * @param {Boolean} enabled Whether this Choice should be shown or not (defaults to `true`)
+   * @returns {Choice} The Choice
+   */
+  static new(dest, emoji, text, enabled = true) {
+    return new Choice(dest, emoji, text, enabled);
+  }
+
+  /**
    * Creates a new Choice instance.
    * @param {Prompt} dest The destination Prompt
    * @param {String} emoji The reaction emoji in unicode string form
@@ -57,6 +69,29 @@ class Choice {
   assign(parent) {
     this.parent = parent;
     return this;
+  }
+
+  /**
+   * Adds a function to be executed when the choice is picked
+   * @param {Function} fn The function
+   */
+  handle(fn) {
+    this.onChoice = fn;
+  }
+
+  /**
+   * Disables the choice, making it not show up in dialogue
+   */
+  disable() {
+    this.enabled = false;
+  }
+
+  /**
+   * Enables the Choice, making it show up in dialogue again
+   * Note: All Choices are enabled by default, there is no need to enable a new Choice
+   */
+  enable() {
+    this.enabled = true;
   }
 }
 
@@ -124,13 +159,37 @@ class Prompt {
   }
 
   /**
-   * Returns the next Prompt, given an emoji in unicode string form as the player's choice. Returns null if the emoji is the 'exit' emoji.
-   * @returns {Promise<Prompt>} The next Prompt
+   * Returns the ID of the next Prompt, given an emoji in unicode string form as the player's choice. Returns null if the emoji is the 'exit' emoji.
+   * @returns {*} The ID of the next Prompt
    */
-  async pick(emoji) {
-    if (emoji === exit) return null;
-    var dest = this.choices.find((choice) => choice.emoji === emoji.toString()).dest;
-    return Prompt.registry.get(dest);
+  pick(emoji) {
+    if (emoji === exit) return null; // Player clicked the exit option
+    return this.choices.findIndex((choice) => choice.emoji === emoji.toString());
+  }
+
+  /**
+   * Displays the next prompt using `.display`, and calls the correct choice `.onChoice` function. **Do not use `.display`!** Use `.go` instead or choice handlers will not work!
+   * @param {Number} index The ID of the prompt that should be displayed next
+   * @param {Discord.TextChannel} channel The channel in which to display it
+   * @returns {Promise<Discord.Message>} The message sent
+   * @example
+   * var myPrompt = Prompt.get(24);
+   * myPrompt.go(myPrompt.pick(emojis.h), channel);
+   */
+  async go(index, channel) {
+    if (index === null) return; // A null destination exits the interface
+    var choice = this.choices[index];
+    var next = Prompt.registry.get(choice.dest);
+    if (choice.hasOwnProperty('onChoice')) choice.onChoice(choice);
+    return await next.display(channel);
+  }
+
+  /**
+   * Get a Prompt by ID from the Prompt list
+   * @param {*} id The id of the desired Prompt
+   */
+  static get(id) {
+    return Prompt.registry.get(id);
   }
 }
 
