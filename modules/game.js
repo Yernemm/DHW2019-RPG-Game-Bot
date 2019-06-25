@@ -47,7 +47,7 @@ module.exports.react = function react(messageReaction, user) {
 };
 
 module.exports.start = async function start(message) {
-  var gameUser = GameUser.retrieve(message.author.id);
+  var gameUser = GameUser.retrieve(message.author.id, message);
   await Prompt.get(gameUser.prompt).display(message.channel);
   return Prompt.get(gameUser.prompt).formatted;
 };

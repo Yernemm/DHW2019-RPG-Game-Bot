@@ -28,7 +28,7 @@ class GameUser {
 
   static retrieve(id, message) {
     if (!GameUser.has(id)) {
-      GameUser.set(id, message, 1, new Player(1, 0));
+      GameUser.set(id, new GameUser(id, message, 1, new Player(1, 0)));
     } else {
       GameUser.get(id).message = message;
     }
