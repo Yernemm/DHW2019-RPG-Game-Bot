@@ -5,8 +5,8 @@ var usage = ""
 var cmdtype = "game"
 //-------------------------
 
-const prompts = require('./prompts.js')
-const emojis = require('./emojis.js')
+const prompts = require('../modules/prompts.js');
+const emojis = require('../modules/emojis.js');
 
 module.exports = {
   run: (data) => {
