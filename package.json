@@ -1,6 +1,6 @@
 {
   "name": "dhw2019-rpg-game-bot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Discord Hack Week 2019 RPG Game Bot",
   "main": "server.js",
   "dependencies": {
