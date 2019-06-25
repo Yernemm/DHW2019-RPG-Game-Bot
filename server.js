@@ -1,5 +1,6 @@
 module.exports.status = "init";
 const discord = require("discord.js");
+const fs = require('fs');
 const client = new discord.Client();
 
 //This holds the token and some configurable data.
@@ -19,18 +20,27 @@ client.on("message", (message) => {
     const command = argsArr.shift().toLowerCase().replace(/[^a-zA-Z ]/g, "");
     const argsTxt = message.content.slice(config.prefix.length + command.length).trim();
 
-    let commandFile = require(`./commands/${command}.js`);
-    let data = {
-        command: command,
-        argsArr: argsArr,
-        argsTxt: argsTxt,
-        client: client,
-        message: message,
-        config: config
-    };
-    let output = commandFile.run(data);
-    log.logCmd(data,output);
-})
+    const path = `./commands/${command}.js`;
+
+    fs.access(path, fs.R_OK, (err) => {
+        if (err) {
+            message.channel.send("This command doesn't exist")
+            console.log(err);
+            return
+        }
+        let commandFile = require(path);
+        let data = {
+            command: command,
+            argsArr: argsArr,
+            argsTxt: argsTxt,
+            client: client,
+            message: message,
+            config: config
+        };
+        let output = commandFile.run(data);
+        log.logCmd(data,output);
+    })
+});
 
 client.on('error', (error) => {
   console.error('The WebSocket encountered an error:', error);
