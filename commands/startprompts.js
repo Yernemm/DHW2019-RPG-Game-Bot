@@ -22,12 +22,12 @@ module.exports = {
     // MAY NOT WORK, May need to be rewritten entirely
     let player = data.message.author;
 
-    let scene4 = new prompts.Prompt(4, 'You reached the end, congratulations!', null).save();
+    let scene4 = new prompts.Prompt(4, 'You reached the end, congratulations!', []).save();
     let choice2to4 = new prompts.Choice(4, emojis.a, 'Proceed to your destination', true);
     let choice7to4 = new prompts.Choice(4, emojis.a, 'Proceed to your destination', true);
     let scene7 = new prompts.Prompt(7, 'You defeated the bandit', [choice7to4]).save();
     let choice6to7 = new prompts.Choice(7, emojis.a, 'Win the fight', true);
-    let scene8 = new prompts.Prompt(8, 'You are defeated by the bandit, you are dead', null).save();
+    let scene8 = new prompts.Prompt(8, 'You are defeated by the bandit, you are dead', []).save();
     let choice6to8 = new prompts.Choice(8, emojis.b, 'Lose the fight', true);
     let scene2 = new prompts.Prompt(2, 'You are traveling down a dirt road', [choice2to4]).save();
     let choice6to2 = new prompts.Choice(2, emojis.b, 'Run away', true);
