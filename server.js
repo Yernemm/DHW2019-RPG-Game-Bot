@@ -22,9 +22,11 @@ client.on("message", (message) => {
 
     const path = `./commands/${command}.js`;
 
+    //checks if the command exists and is readable
     fs.access(path, fs.R_OK, (err) => {
         if (err) {
-            message.channel.send("This command doesn't exist")
+            //if the command doesn't exist or isn't readable send message to user that the command doesn't exist and console logs it
+            message.channel.send("This command doesn't exist");
             console.log(err);
             return
         }
