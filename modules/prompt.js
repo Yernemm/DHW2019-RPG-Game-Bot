@@ -77,6 +77,7 @@ class Choice {
    */
   handle(fn) {
     this.onChoice = fn;
+    return this;
   }
 
   /**

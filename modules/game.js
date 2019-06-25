@@ -1,5 +1,5 @@
-var { GameUser, Player, userList } = require('./gameUser.js');
-var { Prompt, Choice, promptList } = require('./prompt.js');
+var { GameUser } = require('./gameUser.js');
+var { Prompt, Choice } = require('./prompt.js');
 var emojis = require('./emojis.js');
 
 Prompt.save(1, 'You are at a town, you have the feeling you need to keep traveling.', [
@@ -41,6 +41,13 @@ Prompt.save(9, 'You narrowly escape the bandit, and manage to lose him in the fo
   Choice.new(1, emojis.a, 'That was close')
 ]);
 
-module.exports.onReact = function onReact(messageReaction, user) {
+module.exports.react = function react(messageReaction, user) {
   var { message, emoji } = messageReaction;
+
+};
+
+module.exports.start = async function start(message) {
+  var gameUser = GameUser.retrieve(message.author.id);
+  await Prompt.get(gameUser.prompt).display(message.channel);
+  return Prompt.get(gameUser.prompt).formatted;
 };

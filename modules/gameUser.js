@@ -1,7 +1,5 @@
 const { Collection } = require('discord.js');
 
-var userList = new Collection();
-
 class GameUser {
   constructor(id, message, prompt, player) {
     this.id = id;
@@ -11,7 +9,34 @@ class GameUser {
     this.prompt = prompt;
     this.player = player.assign(this);
   }
+
+  exit() {
+    this.message = null;
+  }
+
+  static get(id) {
+    return GameUser.registry.get(id);
+  }
+
+  static set(id, user) {
+    return GameUser.registry.set(id, user);
+  }
+
+  static has(id) {
+    return GameUser.registry.has(id);
+  }
+
+  static retrieve(id, message) {
+    if (!GameUser.has(id)) {
+      GameUser.set(id, message, 1, new Player(1, 0));
+    } else {
+      GameUser.get(id).message = message;
+    }
+    return GameUser.get(id);
+  }
 }
+
+GameUser.registry = new Collection();
 
 class Player {
   constructor(hp, exp) {
@@ -28,6 +53,5 @@ class Player {
 
 module.exports = {
   GameUser,
-  Player,
-  userList
+  Player
 };
