@@ -7,6 +7,7 @@ const config = require('./config.json');
 
 const log = require('./modules/log.js');
 
+//TODO: Get the command handler to not crash when an invalid command is sent. Gonna need some try catch blocks with proper error handling around the commandfile require probably.
 //Command handler for messages.
 client.on("message", (message) => {
     if (message.author.bot) return; //Ignore messages from other bots and itself.
