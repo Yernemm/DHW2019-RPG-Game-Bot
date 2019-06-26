@@ -11,7 +11,7 @@ class Choice {
    * @param {Prompt} dest The destination Prompt
    * @param {String} emoji The reaction emoji in unicode string form
    * @param {String|Function} text The flavor text for this Choice. If a function, the property will become a getter
-   * @param {Boolean} enabled Whether this Choice should be shown or not (defaults to `true`)
+   * @param {Boolean|Function} enabled Whether this Choice should be shown or not (defaults to `true`)
    */
   constructor(dest, emoji, text, enabled = true) {
     this.dest = dest;
@@ -137,7 +137,7 @@ class Prompt {
    * @param {Prompt} dest The destination Prompt
    * @param {String} emoji The reaction emoji in unicode string form
    * @param {String|Function} text The flavor text for this Choice. If a function, the property will become a getter
-   * @param {Boolean} enabled Whether this Choice should be shown or not (defaults to `true`)
+   * @param {Boolean|Function} enabled Whether this Choice should be shown or not (defaults to `true`)
    * @returns {Choice} The Choice
    */
   static makeChoice(dest, emoji, text, enabled = true) {
