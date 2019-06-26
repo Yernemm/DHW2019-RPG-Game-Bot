@@ -41,13 +41,28 @@ Prompt.save(9, 'You narrowly escape the bandit, and manage to lose him in the fo
   Choice.new(1, emojis.a, 'That was close')
 ]);
 
-module.exports.react = function react(messageReaction, user) {
+module.exports.react = async function react(messageReaction, user) {
   var { message, emoji } = messageReaction;
 
+  if (!GameUser.has(user.id)) return;
+
+  var gameUser = GameUser.get(user.id);
+
+  if (gameUser.message !== message.id) return;
+
+  var prompt = Prompt.get(gameUser.prompt);
+  var { msg, next } = await prompt.go(prompt.pick(emoji));
+
+  if (result === null) {
+    gameUser.message = null; // Clear the player's message, player is not playing anymore
+  } else {
+    gameUser.message = msg.id;
+    gameUser.prompt = next.id;
+  }
 };
 
 module.exports.start = async function start(message) {
-  var gameUser = GameUser.retrieve(message.author.id, message);
+  var gameUser = GameUser.retrieve(message.author.id, message.id);
   await Prompt.get(gameUser.prompt).display(message.channel);
   return Prompt.get(gameUser.prompt).formatted;
 };

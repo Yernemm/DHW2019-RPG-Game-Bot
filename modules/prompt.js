@@ -164,7 +164,7 @@ class Prompt {
    * @returns {*} The ID of the next Prompt
    */
   pick(emoji) {
-    if (emoji === exit) return null; // Player clicked the exit option
+    if (emoji.toString() === exit) return null; // Player clicked the exit option
     return this.choices.findIndex((choice) => choice.emoji === emoji.toString());
   }
 
@@ -178,11 +178,11 @@ class Prompt {
    * myPrompt.go(myPrompt.pick(emojis.h), channel);
    */
   async go(index, channel) {
-    if (index === null) return; // A null destination exits the interface
+    if (index === null) return null; // A null destination exits the interface
     var choice = this.choices[index];
     var next = Prompt.registry.get(choice.dest);
     if (choice.hasOwnProperty('onChoice')) choice.onChoice(choice);
-    return await next.display(channel);
+    return { msg: await next.display(channel), next: next };
   }
 
   /**
