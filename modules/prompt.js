@@ -30,7 +30,20 @@ class Choice {
         writable: true
       });
     }
-    this.enabled = enabled;
+    if (isFunction(text)) {
+      Object.defineProperty(this, 'enabled', {
+        configurable: true,
+        enumerable: true,
+        get: enabled
+      });
+    } else {
+      Object.defineProperty(this, 'enabled', {
+        configurable: true,
+        enumerable: true,
+        value: enabled,
+        writable: true
+      });
+    }
     this.parent = null;
   }
 
@@ -72,15 +85,36 @@ class Choice {
    * Disables the choice, making it not show up in dialogue
    */
   disable() {
-    this.enabled = false;
+    try {
+      this.enabled = false;
+    } catch (err) {
+      /*Object.defineProperty(this, 'enabled', {
+        configurable: true,
+        enumerable: true,
+        value: true,
+        writable: true
+      });*/ 
+      // Uncomment that if you want force-disable functionality
+    }
+    return this;
   }
 
   /**
    * Enables the Choice, making it show up in dialogue again
-   * Note: All Choices are enabled by default, there is no need to enable a new Choice
    */
   enable() {
-    this.enabled = true;
+    try {
+      this.enabled = true;
+    } catch (err) {
+      /*Object.defineProperty(this, 'enabled', {
+        configurable: true,
+        enumerable: true,
+        value: false,
+        writable: true
+      });*/
+      // Uncomment that if you want force-enable functionality
+    }
+    return this;
   }
 }
 
