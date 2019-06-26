@@ -1,4 +1,5 @@
 {
+    "name": "Main Story",
     "prompts":[
         {
             "emoji": "🔁",
@@ -91,9 +92,66 @@
         {
             "emoji": "👊",
             "choiceText": "Punch the bandits",
-            "text": "",
+            "text": "You pull back your fist, aiming it right at one of the bandits' head. Like a slingshot, your fist jolts forward and collides with your enemy's head. As it connects, you feel the warmth of the man's cheek as the soft tissue absorbs the force of the punch, only for your fist to follow through and collide with his jaw bone. Stunned, the man stumbles away from you. There are three more bandits and they are not happy about what you've done to their friend. Realising your mistake, you run forward right past them to continue on the journey.",
             "choices":[
                 1
+            ],
+            "secretChoice": 12
+        },
+        {
+            "emoji": "👊",
+            "choiceText": "Keep on fighting",
+            "text": "Wait, really? You you actually want to take on three armoured bandits as an unarmed courier? Alright then... As you fight, you begin to realise certain details about the bandits. They sure are wearing expensive-looking armour. Their swords are also surprisignly sharp. Then, the realisation strikes you harder than your enemy's sword. They weren't bandits afterall! They were-\n\nAnd then everything faded to black.",
+            "choices":[
+                13
+            ]
+        },
+        {
+            "emoji": "❓",
+            "choiceText": "What happened?",
+            "text": "You slowly awaken to the sound of horses pulling a cart along cobbled streets. Your hands are bound. You look around at the others in the wagon. One of the men is finely dressed, and gagged. You look up at a fair-haired man, wearing chainmail and a blue cloth. He begins to speak.\n\n'Hey, you. You're finally awake. You were trying to cross the border, right? Walked right into that Imperial ambush, same as us, and that thief over there.'",
+            "choices":[
+                14, 15, 16, 17
+            ]
+        },
+        {
+            "emoji": "🔪",
+            "choiceText": "Stab the prisoners",
+            "text": "You tried stabbing the other prisoners, only to find out you have no weapon! The guards realise what you tried to do and kill you on the spot by feeding you to the wagon horses.",
+            "choices":[
+                18
+            ]
+        },
+        {
+            "emoji": "👄",
+            "choiceText": "Talk to the man",
+            "text": "You tried to Ralof him but since you are a voiceless protagonist, you only manage to slightly open your mouth without creating a single sound. Ralof takes offense to this and shoves his entire arm down your throat, killing you from the inside.",
+            "choices":[
+                18
+            ]
+        },
+        {
+            "emoji": "🏃",
+            "choiceText": "Run away",
+            "text": "You try to run from the encounter but you can't run away from a trainer battle! Ralof deploys his shiny Alduin, which then proceedes to devour you. You fainted.",
+            "choices":[
+                18
+            ]
+        },
+        {
+            "emoji": "❌",
+            "choiceText": "Exit game",
+            "text": "Well, you try to exit the game. But since the game is now closed, your hypothetical character no longer exists. So in a way, you still die? I guess?",
+            "choices":[
+                18
+            ]
+        },
+        {
+            "emoji": "💀",
+            "choiceText": "Death.",
+            "text": "You died.",
+            "choices":[
+                0
             ]
         }
     ]

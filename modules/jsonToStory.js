@@ -15,6 +15,11 @@ function load(storyName){
     let storyPath = dir + storyName;
     let storyObj = JSON.parse(fs.readFileSync(storyPath, 'utf8'));
 
+    //Load startup message.
+    Prompt.save(-1, 'You have started the story.\nCurrently loaded story: ' + storyObj.name + '\n\nTo select your choices, react to the message with the emoji which corresponds to the option you want.\n\nOccasionally, you may come across a choice **which is written in bold.** These are special choices which only have a small chance of appearing. They will lead you to hidden story paths.', [
+        Prompt.makeChoice(0, '✅', 'Start the story.')
+      ]);
+
     //Iterate through all prompts in the file
     for(i = 0; i < storyObj.prompts.length; i++){
         //Generate the choices for this prompt.
@@ -37,7 +42,7 @@ function load(storyName){
         if(storyObj.prompts[i].secretChoice != null){
             let choiceId = storyObj.prompts[i].secretChoice;
             var sec = Prompt.makeChoice(
-                choiceId, storyObj.prompts[choiceId].emoji, storyObj.prompts[choiceId].choiceText
+                choiceId, storyObj.prompts[choiceId].emoji, "**" + storyObj.prompts[choiceId].choiceText + "**"
             ).handle(function (thisChoice) {
                 shuffleSecrets();
               });
