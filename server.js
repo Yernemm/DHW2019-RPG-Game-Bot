@@ -27,7 +27,7 @@ client.on("message", (message) => {
         if (err) {
             //if the command doesn't exist or isn't readable send message to user that the command doesn't exist and console logs it
             message.channel.send("This command doesn't exist");
-            console.log(err);
+            console.log("The command \""+command+"\" doesn't exist");
             return
         }
         let commandFile = require(path);
