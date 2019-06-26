@@ -7,18 +7,6 @@ function isFunction(functionToCheck) {
 
 class Choice {
   /**
-   * Creates a new Choice instance, and returns it. This should be used instead of `new Choice` as you can call `.handle` on it without worrying about it breaking
-   * @param {Prompt} dest The destination Prompt
-   * @param {String} emoji The reaction emoji in unicode string form
-   * @param {String|Function} text The flavor text for this Choice. If a function, the property will become a getter
-   * @param {Boolean} enabled Whether this Choice should be shown or not (defaults to `true`)
-   * @returns {Choice} The Choice
-   */
-  static new(dest, emoji, text, enabled = true) {
-    return new Choice(dest, emoji, text, enabled);
-  }
-
-  /**
    * Creates a new Choice instance.
    * @param {Prompt} dest The destination Prompt
    * @param {String} emoji The reaction emoji in unicode string form
@@ -111,6 +99,18 @@ class Prompt {
   }
 
   /**
+   * Creates a new Choice instance, and returns it. This should be used instead of `new Choice` as you can call `.handle` on it without worrying about it breaking
+   * @param {Prompt} dest The destination Prompt
+   * @param {String} emoji The reaction emoji in unicode string form
+   * @param {String|Function} text The flavor text for this Choice. If a function, the property will become a getter
+   * @param {Boolean} enabled Whether this Choice should be shown or not (defaults to `true`)
+   * @returns {Choice} The Choice
+   */
+  static makeChoice(dest, emoji, text, enabled = true) {
+    return new Choice(dest, emoji, text, enabled);
+  }
+
+  /**
    * Creates a new Prompt instance.
    * @param {*} id The ID of this Prompt
    * @param {String|Function} text The flavor text for this Prompt. If a function, the property will become a getter
@@ -200,7 +200,4 @@ class Prompt {
  */
 Prompt.registry = new Collection();
 
-module.exports = {
-  Choice,
-  Prompt
-};
+module.exports = Prompt;

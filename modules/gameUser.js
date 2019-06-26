@@ -26,7 +26,8 @@ class GameUser {
     return GameUser.registry.has(id);
   }
 
-  static retrieve(id, message) {
+  // Gets a GameUser, creating it if it doesn't exist
+  static retrieve(id) {
     if (!GameUser.has(id)) {
       GameUser.set(id, new GameUser(id, null, 1, new Player(1, 0)));
     }
@@ -49,6 +50,4 @@ class Player {
   }
 }
 
-module.exports = {
-  GameUser
-};
+module.exports = GameUser;
