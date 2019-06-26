@@ -38,7 +38,7 @@
             "choiceText": "Surrender.",
             "text": "You have surrendered to the system. Game Over.",
             "choices":[
-                4
+                
             ],
             "end": true
         },
