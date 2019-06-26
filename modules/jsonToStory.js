@@ -33,6 +33,7 @@ function load(storyName){
             });
         }
 
+        //Handle the secret choice if it exists.
         if(storyObj.prompts[i].secretChoice != null){
             let choiceId = storyObj.prompts[i].secretChoice;
             var sec = Prompt.makeChoice(

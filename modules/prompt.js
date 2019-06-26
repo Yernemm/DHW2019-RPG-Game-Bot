@@ -185,7 +185,10 @@ class Prompt {
    * @returns {Promise<Discord.Message>} The message sent
    */
   async display(channel) {
-    var emojis = this.choices.map((choice) => choice.emoji).concat([exit]);
+    var emojis = this.choices
+    .filter((choice) => choice.enabled)
+    .map((choice) => choice.emoji).concat([exit]);
+    
     var msg = await channel.send(this.formatted);
     await emojis.reduce((lastPromise, emoji) => {
       return lastPromise.then(() => msg.react(emoji));
