@@ -1,0 +1,100 @@
+{
+    "prompts":[
+        {
+            "emoji": "🔁",
+            "choiceText": "Return to the start.",
+            "text": "You have been walking down a long winding road for what seemed like hours. Your courier job pays well of course, but you sometimes wonder if it's worth all the effort. Your client didn't specify your destination very well either. 'A large red-bricked cottage, just at the end of this road', she told you. Yet eventually, the road splits. You stare down both roads. The road to your right enters a deep, dark forest. The road to your left leads you down by a gentle stream. Not knowing which one will lead you to the recipient, you head down the left route as it is clearly safer and much more pleasant.",
+            "choices": [
+                2, 3, 4
+            ]
+        },
+        {
+            "emoji": "🤠",
+            "choiceText": "This path has not been programmed in yet.",
+            "text": "This path has not been programmed in yet.",
+            "choices":[
+                0
+            ]
+        },
+        {
+            "emoji": "⏪",
+            "choiceText": "Go left.",
+            "text": "'I've made the right choice.' You thought to yourself. As you wandered by the winding stream, you started to wonder about nature and life and the universe itself. Nature often has this effect on you. You admire the beautiful colours of Autumn trees, swaying in the breeze. You look up at the cloudless sky, dotted with birds. You begin to envy their unparalleled freedom. But you remember that there's a reason you are here: to devliver the package. You slowly begin to focus your mind on the task.",
+            "choices": [
+                5, 6
+            ]
+        },
+        {
+            "emoji": "⏬",
+            "choiceText": "Turn back.",
+            "text": "Your client was clearly asking too much of you. Sure, you can deliver packages to any place in the land but having to make a choice? That is too much for anyone to ask for. It's completely unheard of! Probably even illegal! You trace back your each and every step until you reach your client's home. By the time you reach it, however, he sun has already set. An upper-floor window is still lit-up so you assume your client is still awake. You are furious and ready to verbally present the most detailed complaint of your career. This client had the audacity to force you into making a choice afterall. Your fist is clenched with all your might as you begin raising your arm before the client's front door. You pull your fist back and prepare for the most vigorous door-knocking of your life.",
+            "choices":[
+                7, 8
+            ]
+        },
+        {
+            "emoji": "⏩",
+            "choiceText": "Go right.",
+            "text": "Just as you step towards the left route, you get a sudden surge of courage and determination. You stop yourself mid-stride. 'Nothing comes easy in life.' You think to yourself, now more certain than ever that your goal must be down the hard route. Of course it would be! No real adventure ever goes through the quiet and peaceful roads! The only **true** adventure must be down the harsh, unforgiving path, most certainly filled with traps, monsters, and monster traps. You take a step back, turn to face the danger head-on, and run with all your might. You hear the overly-dramatic adventuring music kicking in as you sprint through your adventurous montage sequence. Just then, the music suddenly stops as you spot a group of bandits just metres ahead. You are too determined to let this stop you. Without hesitation, you approach the bandits with your fists raised.",
+            "choices":[
+                9, 10, 11
+            ]
+        },
+        {
+            "emoji": "⏫",
+            "choiceText": "Focus and keep moving",
+            "text": "",
+            "choices":[
+                1
+            ]
+        },
+        {
+            "emoji": "🌳",
+            "choiceText": "Ponder about nature",
+            "text": "",
+            "choices":[
+                1
+            ]
+        },
+        {
+            "emoji": "🚪",
+            "choiceText": "Knock on the door",
+            "text": "",
+            "choices":[
+                1
+            ]
+        },
+        {
+            "emoji": "🏠",
+            "choiceText": "Turn away and go home",
+            "text": "",
+            "choices":[
+                1
+            ]
+        },
+        {
+            "emoji": "🏃",
+            "choiceText": "Retreat",
+            "text": "",
+            "choices":[
+                1
+            ]
+        },
+        {
+            "emoji": "👟",
+            "choiceText": "Sneak past the bandits",
+            "text": "",
+            "choices":[
+                1
+            ]
+        },
+        {
+            "emoji": "👊",
+            "choiceText": "Punch the bandits",
+            "text": "",
+            "choices":[
+                1
+            ]
+        }
+    ]
+}

@@ -4,7 +4,7 @@ var Prompt = require('./prompt.js');
 const jsonStory = require('./jsonToStory.js');
 
 //createStory();
-jsonStory.load('test.json')
+jsonStory.load('story.json')
 
 module.exports.react = async function react(messageReaction, user) {
   if (user.bot) return;
