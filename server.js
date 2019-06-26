@@ -44,15 +44,15 @@ client.on("message", (message) => {
     })
 });
 
+// Handler function is in the game.js file
+client.on('messageReactionAdd', require('./modules/game.js').react);
+
 client.on('error', (error) => {
   console.error('The WebSocket encountered an error:', error);
 });
 
 client.on('ready', () => {
-  log.logTxt(client, config,
-    `Bot started on ${client.user.tag}
-    HEWWO I AM NAO ONLINE UWU`
-  );
+  log.logTxt(client, config, `Bot started on ${client.user.tag}\n    HEWWO I AM NAO ONLINE UWU`);
 });
 
 client.on('rateLimit', (info) => {
