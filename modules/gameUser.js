@@ -52,6 +52,5 @@ class Player {
 }
 
 module.exports = {
-  GameUser,
-  Player
+  GameUser
 };
