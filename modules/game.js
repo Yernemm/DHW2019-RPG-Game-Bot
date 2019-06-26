@@ -1,8 +1,10 @@
 var GameUser = require('./gameUser.js');
 var Prompt = require('./prompt.js');
-var createStory = require('./createStory.js');
+//var createStory = require('./createStory.js');
+const jsonStory = require('./jsonToStory.js');
 
-createStory();
+//createStory();
+jsonStory.load('test.json')
 
 module.exports.react = async function react(messageReaction, user) {
   if (user.bot) return;

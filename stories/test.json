@@ -1,0 +1,54 @@
+{
+    "prompts":[
+        {
+            "emoji": "🔁",
+            "choiceText": "Return to the first menu.",
+            "text": "This is a test story which demonstrates the usage of storing the stories in a JSON format.",
+            "choices": [
+                1
+            ]
+        },
+        {
+            "emoji": "✅",
+            "choiceText": "React with the check mark to continue.",
+            "text": "You have reached the second screen. This screen demonstrates that you can have multiple choices.",
+            "choices": [
+                0, 2
+            ]
+        },
+        {
+            "emoji": "🕒",
+            "choiceText": "Move on...",
+            "text": "You tried to continue forward...",
+            "choices":[
+                3,4
+            ]
+        },
+        {
+            "emoji": "🕘",
+            "choiceText": "Get stuck in a time loop.",
+            "text": "You are stuck in a time loop. Perhaps a miracle can save you.",
+            "choices":[
+                3
+            ],
+            "secretChoice": 5
+        },
+        {
+            "emoji": "🤠",
+            "choiceText": "Surrender.",
+            "text": "You have surrendered to the system. Game Over.",
+            "choices":[
+                4
+            ],
+            "end": true
+        },
+        {
+            "emoji": "⭐",
+            "choiceText": "A miracle has appeared!",
+            "text": "You were lucky enough to escape the time loop.",
+            "choices":[
+                0
+            ]
+        }
+    ]
+}

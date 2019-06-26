@@ -29,7 +29,7 @@ class GameUser {
   // Gets a GameUser, creating it if it doesn't exist
   static retrieve(id) {
     if (!GameUser.has(id)) {
-      GameUser.set(id, new GameUser(id, null, 1, new Player(1, 0)));
+      GameUser.set(id, new GameUser(id, null, 0, new Player(0, 0)));
     }
     return GameUser.get(id);
   }
