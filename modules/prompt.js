@@ -1,8 +1,6 @@
 const {logTxt} = require('./log.js');
-const {client}= require('../server.js');
 const {Collection} = require('discord.js');
 const {exit} = require('./emojis.js');
-const config = require('../config.json');
 
 function isFunction(functionToCheck) {
   return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
@@ -201,6 +199,7 @@ class Prompt {
   }
 
   static removeUserReactions(msg){ // keeps bot's reactions only
+    const {client} = require('../server.js');
     msg.reactions.array()
       .forEach(reaction => reaction.users.array()
         .filter((user) => user.id != client.user.id)
