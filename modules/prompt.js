@@ -190,7 +190,9 @@ class Prompt {
     .map((choice) => choice.emoji).concat([exit]);
 
     var msg = await channel.send(this.formatted);
-    emojis.forEach((emoji)=>msg.react(emoji));
+    await emojis.reduce((lastPromise, emoji) => {
+      return lastPromise.then(() => msg.react(emoji));
+    }, Promise.resolve());
     return msg;
   }
 
