@@ -25,7 +25,7 @@ async function react(messageReaction, user) {
 
   if (result === null) {  // Exit
     gameUser.exit();
-    message.channel.send(new PrettyMsg(1,"[bye-bye]"));
+    message.channel.send(new PrettyMsg("[bye-bye]", user));
     gameUser.message = null; // Clear the player's message, player is not playing anymore
   } else {
     gameUser.message = result.msg.id;

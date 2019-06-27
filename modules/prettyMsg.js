@@ -1,10 +1,11 @@
 const Discord = require('discord.js');
 
 class PrettyMsg extends Discord.RichEmbed {
-  constructor(player, message){
-    super({
-      title: message
-    });
+  constructor(message, player = null){
+    super({title: message});
+    if(player){
+      setThumbnail(player.avatarURL);
+    }
   }
 }
 
