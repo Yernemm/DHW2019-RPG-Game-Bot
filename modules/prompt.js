@@ -230,7 +230,7 @@ class Prompt {
     var choice = this.choices[index];
     var next = Prompt.registry.get(choice.dest);
     if (choice.hasOwnProperty('onChoice')) choice.onChoice(choice);
-    return { msg: await Prompt.removeUserReactions(next.display(channel)), next: next };
+    return { msg: await Prompt.removeUserReactions(await next.display(channel)), next: next };
   }
 
   /**
