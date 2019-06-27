@@ -187,8 +187,8 @@ class Prompt {
    */
   async display(channel) {
     var emojis = this.choices
-      .filter(choice => choice.enabled)
-        .map(choice => choice.emoji).concat([exit]);
+    .filter(choice => choice.enabled)
+    .map(choice => choice.emoji).concat([exit]);
 
     var msg = await channel.send(this.formatted);
     await emojis.reduce((lastPromise, emoji) => {
@@ -198,13 +198,25 @@ class Prompt {
   }
 
   static removeUserReactions(msg){ // keeps bot's reactions only
-    const {client} = require('../server.js');
+    const bot = require('../server.js').client.user;
     msg.reactions.array()
-      .forEach(reaction => reaction.users.array()
-        .filter(user => user.id != client.user.id)
-          .forEach(user => reaction.remove(user)
-            .catch(() => logTxt("ERROR: Could I please have permission to manage messages? :)"))));
+    .forEach(reaction => reaction.users.array()
+      .filter(user => user.id != bot.id)
+      .forEach(user => reaction.remove(user)
+        .catch(noMsgManagePerm)));
     return msg;
+  }
+
+  static removeOldReactions(msg, chosenEmoji){ // remove non-chosen reactions
+    const bot = require('../server.js').client.user;
+    msg.reactions.array()
+    .filter(reaction => reaction.emoji != chosenEmoji)
+    .forEach(reaction => reaction.remove(bot)
+      .catch(noMsgManagePerm));
+  }
+
+  static noMsgManagePerm(){
+    logTxt("ERROR: Could I please have permission to manage messages? :)")
   }
 
   /**
@@ -212,6 +224,7 @@ class Prompt {
    * @returns {*} The ID of the next Prompt
    */
   pick(emoji) {
+
     if (emoji.toString() === exit) return null; // Player clicked the exit option
     return this.choices.findIndex(choice => choice.emoji === emoji.toString());
   }
