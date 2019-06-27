@@ -194,7 +194,7 @@ class Prompt {
     await emojis.reduce((lastPromise, emoji) => {
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());
-    await msg.reactions.array().forEach(reaction => reaction.users.values().filter(user => user.id != client.user.id).forEach(user => reaction.remove(user))); // remove extra reactions before we're ready
+    await msg.reactions.array().forEach(reaction => reaction.users.array().filter(user => user.id != client.user.id).forEach(user => reaction.remove(user))); // remove extra reactions before we're ready
     return msg;
   }
 
