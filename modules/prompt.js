@@ -1,5 +1,4 @@
 const { Collection } = require('discord.js');
-const client = require('../server.js').client;
 const exit = require('./emojis.js').exit;
 
 function isFunction(functionToCheck) {
@@ -186,6 +185,7 @@ class Prompt {
    * @returns {Promise<Discord.Message>} The message sent
    */
   async display(channel) {
+    var client = require('../server.js').client;
     var emojis = this.choices
     .filter((choice) => choice.enabled)
     .map((choice) => choice.emoji).concat([exit]);
