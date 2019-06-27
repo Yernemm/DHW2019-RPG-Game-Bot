@@ -8,7 +8,7 @@ module.exports = {
     //e.g. to get arguments array, use data.argsArr.
 
     // Command Logic
-    let msg = "This command is not finished." // Message to return to user (will be logged)
+    let msg = "This command is not finished."; // Message to return to user (will be logged)
 
 
     data.message.channel.send(msg);

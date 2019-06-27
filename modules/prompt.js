@@ -6,7 +6,7 @@ const {exit} = require('./emojis.js');
 
 module.exports = {
   Prompt: Prompt
-}
+};
 
 function isFunction(functionToCheck) {
   return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';

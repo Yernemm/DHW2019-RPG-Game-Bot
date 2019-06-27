@@ -11,7 +11,7 @@ module.exports = {
 
     // COMMAND LOGIC
 
-    let msg = "" // Message to return to user (will be logged)
+    let msg = ""; // Message to return to user (will be logged)
 
     // MAY NOT WORK, May need to be rewritten entirely
     //let player = data.message.author;

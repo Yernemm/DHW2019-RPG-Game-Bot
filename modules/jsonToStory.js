@@ -3,7 +3,7 @@ var emojis = require('./emojis.js');
 
 module.exports = {
     load: load
-}
+};
 
 const dir = './stories/';
 const fs = require('fs');
@@ -24,7 +24,7 @@ function load(storyName){
     //Iterate through all prompts in the file
     for(i = 0; i < storyObj.prompts.length; i++){
         //Generate the choices for this prompt.
-        let choicesArray = []
+        let choicesArray = [];
 
         //Only parse if the prompt has choices.
         if(storyObj.prompts[i].choices.length > 0){
