@@ -23,6 +23,11 @@ class Choice {
         enumerable: true,
         get: text
       });
+      Object.defineProperty(this, 'enabled', {
+        configurable: true,
+        enumerable: true,
+        get: enabled
+      });
     } else {
       Object.defineProperty(this, 'text', {
         configurable: true,
@@ -30,14 +35,6 @@ class Choice {
         value: text,
         writable: true
       });
-    }
-    if (isFunction(text)) {
-      Object.defineProperty(this, 'enabled', {
-        configurable: true,
-        enumerable: true,
-        get: enabled
-      });
-    } else {
       Object.defineProperty(this, 'enabled', {
         configurable: true,
         enumerable: true,
