@@ -21,7 +21,7 @@ async function react(messageReaction, user) {
   Prompt.removeOldReactions(message, emoji);
 
   var prompt = Prompt.get(gameUser.prompt);
-  var result = await prompt.go(prompt.pick(emoji), message.channel);
+  var result = await prompt.go(prompt.pick(emoji), message.channel, user);
 
   if (result === null) {  // Exit
     gameUser.exit();

@@ -1,6 +1,7 @@
 const {logTxt} = require('./log.js');
 const {Collection} = require('discord.js');
 const {exit} = require('./emojis.js');
+const {PrettyMsg} = require('./prettyMsg.js');
 
 function isFunction(functionToCheck) {
   return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
@@ -185,12 +186,12 @@ class Prompt {
    * Sends the Prompt in message form to a given channel. After sending the message, reactions will be added.
    * @returns {Promise<Discord.Message>} The message sent
    */
-  async display(channel) {
+  async display(channel, player) {
     var emojis = this.choices
     .filter(choice => choice.enabled)
     .map(choice => choice.emoji).concat([exit]);
 
-    var msg = await channel.send(this.formatted);
+    var msg = await channel.send(new PrettyMsg(this.formatted, player));
     await emojis.reduce((lastPromise, emoji) => {
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());
@@ -238,12 +239,12 @@ class Prompt {
    * var myPrompt = Prompt.get(24);
    * myPrompt.go(myPrompt.pick(emojis.h), channel);
    */
-  async go(index, channel) {
+  async go(index, channel, player) {
     if (index === null) return null; // A null destination exits the interface
     var choice = this.choices[index];
     var next = Prompt.registry.get(choice.dest);
     if (choice.hasOwnProperty('onChoice')) choice.onChoice(choice);
-    return { msg: await Prompt.removeUserReactions(await next.display(channel)), next: next };
+    return { msg: await Prompt.removeUserReactions(await next.display(channel, player)), next: next };
   }
 
   /**
