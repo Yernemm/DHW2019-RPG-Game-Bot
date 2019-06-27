@@ -186,7 +186,7 @@ class Prompt {
    */
   async display(channel) {
     const config = require('../config.json');
-    const {logtxt} = require('./log.js');
+    const {logTxt} = require('./log.js');
     const {client}= require('../server.js');
     var emojis = this.choices
     .filter((choice) => choice.enabled)
