@@ -194,8 +194,6 @@ class Prompt {
     await emojis.reduce((lastPromise, emoji) => {
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());
-    console.log(client);
-    console.log(client.user.tag);
     await msg.reactions.array()
       .forEach(reaction => reaction.users.array()
         .filter((user) => user.id != client.user.id)
