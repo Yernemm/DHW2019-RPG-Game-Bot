@@ -6,7 +6,7 @@ const jsonStory = require('./jsonToStory.js');
 module.exports={
   react: react,
   start: start
-}
+};
 
 //createStory();
 jsonStory.load('story.json');

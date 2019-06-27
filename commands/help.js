@@ -85,7 +85,7 @@ module.exports = {
             msg = `Discord Hack Week 2019  RPG Game Bot\r\nTo get help for a specific command, do ${data.config.prefix}help [command]\r\n\r\n`;
 
 
-            msg += "Commands:\r\n"
+            msg += "Commands:\r\n";
 
 
             var cmdInfoMsg = "";
@@ -112,7 +112,7 @@ module.exports = {
                 let us = file.usage;
                 msg = `**Help for ${data.config.prefix}${cmd}**\r\n${de}\r\nUsage: ${data.config.prefix}${cmd} ${us}`;
             } catch (err) {
-                msg = `Command \"${data.argsTxt}\" not found.\r\nUse **>help** to see available commands.`
+                msg = `Command \"${data.argsTxt}\" not found.\r\nUse **>help** to see available commands.`;
             }
 
             break;

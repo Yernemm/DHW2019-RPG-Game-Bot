@@ -9,14 +9,14 @@ module.exports = {
     //logTxt needs the client and config file to log any string.
     logTxt: (text) => {
         const {client, config} = require('../server.js');
-        console.log(getTimeStamp() + ' ' + text)
-        client.channels.get(config.logChannel).send('```\n' + text + '\n```',  generateDiscordTimestampEmbed())
+        console.log(getTimeStamp() + ' ' + text);
+        client.channels.get(config.logChannel).send('```\n' + text + '\n```',  generateDiscordTimestampEmbed());
     }
-}
+};
 
 
 function generateLogText(data, output){
-    return `\`[${data.message.author.tag}]: ${data.message.content}\`\n\`[Response]:${output}\``
+    return `\`[${data.message.author.tag}]: ${data.message.content}\`\n\`[Response]:${output}\``;
 }
 
 function generateConsoleText(data,output){
@@ -34,7 +34,7 @@ function generateDiscordTimestampEmbed(){
 }
 
 function sendDiscordLog(data, output, channel){
-    data.client.channels.get(channel).send(generateLogText(data, output), generateDiscordLogEmbed(data, output))
+    data.client.channels.get(channel).send(generateLogText(data, output), generateDiscordLogEmbed(data, output));
 }
 
 function getTimeStamp(){
