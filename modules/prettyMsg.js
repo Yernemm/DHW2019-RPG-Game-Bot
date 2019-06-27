@@ -4,7 +4,7 @@ class PrettyMsg extends Discord.RichEmbed {
   constructor(message, player = null){
     super({title: message});
     if(player){
-      this.setImage(player.avatarURL);
+      this.setAuthor(player.username, player.avatarURL);
     }
   }
 }
