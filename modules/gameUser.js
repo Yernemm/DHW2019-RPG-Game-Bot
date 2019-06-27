@@ -1,6 +1,6 @@
 const { Collection } = require('discord.js');
 
-export class GameUser {
+module.exports = class GameUser {
   constructor(id, message, prompt, player) {
     this.id = id;
     // Last message prompt sent by the bot to the player
