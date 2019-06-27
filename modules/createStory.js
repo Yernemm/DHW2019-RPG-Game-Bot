@@ -1,4 +1,4 @@
-var Prompt = require('./prompt.js');
+var {Prompt} = require('./prompt.js');
 var emojis = require('./emojis.js');
 
 function createStory() {

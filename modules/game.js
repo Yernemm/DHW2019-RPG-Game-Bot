@@ -1,5 +1,5 @@
 const {GameUser} = require('./gameUser.js');
-const Prompt = require('./prompt.js');
+const {Prompt} = require('./prompt.js');
 //var {createStory} = require('./createStory.js');
 const jsonStory = require('./jsonToStory.js');
 
