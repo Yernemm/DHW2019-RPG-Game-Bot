@@ -22,7 +22,7 @@ async function react(messageReaction, user) {
   var result = await prompt.go(prompt.pick(emoji), message.channel);
 
   if (result === null) {  // Exit
-    message.channel.send("[bye-bye]")
+    message.channel.send(new discord.RichEmbed().setTitle("[bye-bye]"));
     gameUser.message = null; // Clear the player's message, player is not playing anymore
   } else {
     gameUser.message = result.msg.id;
