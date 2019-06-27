@@ -11,7 +11,7 @@ class GameUser {
   }
 
   exit() {
-    GameUser.registry.delete(id);
+    GameUser.registry.delete(this.id);
   }
 
   static get(id) {
