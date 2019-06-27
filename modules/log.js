@@ -1,5 +1,5 @@
 const discord = require('discord.js');
-const {client, config} = require('server.js');
+const {client, config} = require('../server.js');
 
 module.exports = {
     //logCmd takes the command data and command output. Then logs it.
