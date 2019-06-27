@@ -1,3 +1,6 @@
+const config = require('../config.json');
+const {logTxt} = require('./log.js');
+const {client}= require('../server.js');
 const {Collection} = require('discord.js');
 const {exit} = require('./emojis.js');
 
@@ -198,9 +201,6 @@ class Prompt {
   }
 
   static removeUserReactions(msg){ // keeps bot's reactions only
-    const config = require('../config.json');
-    const {logTxt} = require('./log.js');
-    const {client}= require('../server.js');
     msg.reactions.array()
       .forEach(reaction => reaction.users.array()
         .filter((user) => user.id != client.user.id)
