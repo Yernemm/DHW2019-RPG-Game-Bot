@@ -32,7 +32,7 @@ class Choice {
         }
       });
     else
-      Object.defineProperies(this, {
+      Object.defineProperties(this, {
         text: {
           configurable: true,
           enumerable: true,
