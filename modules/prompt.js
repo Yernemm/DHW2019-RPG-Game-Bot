@@ -194,7 +194,6 @@ class Prompt {
     await emojis.reduce((lastPromise, emoji) => {
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());
-    await Prompt.removeUserReactions(msg)  // remove extra reactions before we're ready
     return msg;
   }
 
@@ -205,6 +204,7 @@ class Prompt {
         .filter((user) => user.id != client.user.id)
           .forEach(user => reaction.remove(user)
             .catch(()=>logTxt("ERROR: Could I please have permission to manage messages? :)"))));
+    return msg;
   }
 
   /**
@@ -230,7 +230,7 @@ class Prompt {
     var choice = this.choices[index];
     var next = Prompt.registry.get(choice.dest);
     if (choice.hasOwnProperty('onChoice')) choice.onChoice(choice);
-    return { msg: await next.display(channel), next: next };
+    return { msg: await removeUserReactions(next.display(channel)), next: next };
   }
 
   /**
