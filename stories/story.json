@@ -44,7 +44,7 @@
         {
             "emoji": "⏫",
             "choiceText": "Focus and keep moving",
-            "text": "",
+            "text": "", 
             "choices":[
                 1
             ]
