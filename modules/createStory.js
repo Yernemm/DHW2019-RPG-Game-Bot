@@ -1,10 +1,6 @@
 var Prompt = require('./prompt.js');
 var emojis = require('./emojis.js');
 
-module.exports ={
-  createStory: createStory
-};
-
 function createStory() {
   Prompt.save(1, 'You are at a town, you have the feeling you need to keep traveling.', [
     Prompt.makeChoice(2, emojis.a, 'Take the road'),
@@ -44,4 +40,8 @@ function createStory() {
   Prompt.save(9, 'You narrowly escape the bandit, and manage to lose him in the forest.', [
     Prompt.makeChoice(1, emojis.a, 'That was close')
   ]);
+};
+
+module.exports ={
+  createStory: createStory
 };

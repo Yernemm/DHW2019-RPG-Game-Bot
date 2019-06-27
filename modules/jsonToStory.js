@@ -1,10 +1,6 @@
 var Prompt = require('./prompt.js');
 var emojis = require('./emojis.js');
 
-module.exports = {
-    load: load
-};
-
 const dir = './stories/';
 const fs = require('fs');
 
@@ -72,3 +68,7 @@ function shuffleSecrets(){
         })
     }
 }
+
+module.exports = {
+    load: load
+};

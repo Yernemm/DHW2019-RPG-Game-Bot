@@ -1,14 +1,9 @@
+module.exports.status = "init";
 const discord = require("discord.js");
 const fs = require('fs');
 const config = require('./config.json');  //This holds the token and some configurable data.
 const {logCmd, logTxt} = require('./modules/log.js');
 const client = new discord.Client();
-
-module.exports={
-  status: "init",
-  client: client,
-  config: config
-}
 
 //TODO: Get the command handler to not crash when an invalid command is sent. Gonna need some try catch blocks with proper error handling around the commandfile require probably.
 //Command handler for messages.
@@ -63,4 +58,8 @@ client.on('rateLimit', (info) => {
 
 client.login(config.token);
 
-module.exports.status = "loaded";
+module.exports={
+  status: "loaded",
+  client: client,
+  config: config
+};

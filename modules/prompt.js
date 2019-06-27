@@ -4,10 +4,6 @@ const {client}= require('../server.js');
 const {Collection} = require('discord.js');
 const {exit} = require('./emojis.js');
 
-module.exports = {
-  Prompt: Prompt
-};
-
 function isFunction(functionToCheck) {
   return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
 }
@@ -252,3 +248,7 @@ class Prompt {
  * @type {Discord.Collection<String, Prompt>}
  */
 Prompt.registry = new Collection();
+
+module.exports = {
+  Prompt: Prompt
+};

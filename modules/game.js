@@ -3,11 +3,6 @@ const Prompt = require('./prompt.js');
 //var {createStory} = require('./createStory.js');
 const jsonStory = require('./jsonToStory.js');
 
-module.exports={
-  react: react,
-  start: start
-};
-
 //createStory();
 jsonStory.load('story.json');
 
@@ -37,4 +32,9 @@ async function start(message) {
   var msg = await Prompt.get(gameUser.prompt).display(message.channel);
   gameUser.message = msg.id;
   return Prompt.get(gameUser.prompt).formatted;
+};
+
+module.exports={
+  react: react,
+  start: start
 };
