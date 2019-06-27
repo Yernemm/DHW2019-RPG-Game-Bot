@@ -35,7 +35,7 @@ async function react(messageReaction, user) {
 
 async function start(message) {
   var gameUser = GameUser.retrieve(message.author.id);
-  var msg = await Prompt.get(gameUser.prompt).display(message.channel);
+  var msg = await Prompt.get(gameUser.prompt).display(message.channel, message.author);
   gameUser.message = msg.id;
   return Prompt.get(gameUser.prompt).formatted;
 };
