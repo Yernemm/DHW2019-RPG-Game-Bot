@@ -1,14 +1,15 @@
 var Prompt = require('./prompt.js');
 var emojis = require('./emojis.js');
 
+module.exports = {
+    load: load
+}
+
 const dir = './stories/';
 const fs = require('fs');
 
 var secretChoices = [];
 const secretChance = 0.1;
-module.exports = { 
-    load: function (storyName) {load(storyName)}
-}
 
 function load(storyName){
     //Load the json file

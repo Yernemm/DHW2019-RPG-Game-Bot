@@ -1,8 +1,12 @@
 module.exports = {
-    save,
-    load
+    save: save,
+    load: load
 }
 //TODO: All of this.
-function save();
+function save(){
 
-function load();
+}
+
+function load(){
+
+}

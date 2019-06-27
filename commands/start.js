@@ -1,31 +1,16 @@
-//-------------------------
-//METADATA
-var desc = "Starts the game."
-var usage = ""
-var cmdtype = "game"
-//-------------------------
-
 module.exports = {
+  // METADATA
+  desc: "Starts the game.",
+  usage: "",
+  cmdtype: "game",
   run: (data) => {
     // data contains: command, argsArr, argsTxt, client, message, config
     //e.g. to get arguments array, use data.argsArr.
 
-
-
-    let msg = "" // Message to return to user (will be logged)
-//------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------------------------------------------
     // Command Logic
+    let msg = "This command is not finished." // Message to return to user (will be logged)
 
-    msg = "This command is not finished."
 
-
-//------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------------------------------------------------------------------------------------------------    
     data.message.channel.send(msg);
     return msg;
-  },
-  desc: desc,
-  usage: usage,
-  cmdtype: cmdtype
-};
+}};

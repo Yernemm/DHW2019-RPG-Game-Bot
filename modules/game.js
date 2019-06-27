@@ -3,10 +3,15 @@ var Prompt = require('./prompt.js');
 //var createStory = require('./createStory.js');
 const jsonStory = require('./jsonToStory.js');
 
-//createStory();
-jsonStory.load('story.json')
+module.exports={
+  react: react,
+  start: start
+}
 
-module.exports.react = async function react(messageReaction, user) {
+//createStory();
+jsonStory.load('story.json');
+
+async function react(messageReaction, user) {
   if (user.bot) return;
   var { message, emoji } = messageReaction;
 
@@ -27,7 +32,7 @@ module.exports.react = async function react(messageReaction, user) {
   }
 };
 
-module.exports.start = async function start(message) {
+async function start(message) {
   var gameUser = GameUser.retrieve(message.author.id);
   var msg = await Prompt.get(gameUser.prompt).display(message.channel);
   gameUser.message = msg.id;

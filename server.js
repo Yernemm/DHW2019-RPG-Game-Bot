@@ -62,4 +62,5 @@ client.on('rateLimit', (info) => {
 });
 
 client.login(config.token);
+
 module.exports.status = "loaded";

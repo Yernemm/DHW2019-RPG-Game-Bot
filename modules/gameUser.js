@@ -1,5 +1,9 @@
 const { Collection } = require('discord.js');
 
+module.exports = {
+  GameUser: GameUser
+}
+
 class GameUser {
   constructor(id, message, prompt, player) {
     this.id = id;
@@ -49,5 +53,3 @@ class Player {
     return this;
   }
 }
-
-module.exports = GameUser;
