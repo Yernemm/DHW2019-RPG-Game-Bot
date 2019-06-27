@@ -1,3 +1,4 @@
+const discord = require('discord.js');
 const {GameUser} = require('./gameUser.js');
 const {Prompt} = require('./prompt.js');
 //const {createStory} = require('./createStory.js');
