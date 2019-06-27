@@ -1,5 +1,5 @@
-var {Prompt} = require('./prompt.js');
-var emojis = require('./emojis.js');
+const {Prompt} = require('./prompt.js');
+const emojis = require('./emojis.js');
 
 function createStory() {
   Prompt.save(1, 'You are at a town, you have the feeling you need to keep traveling.', [

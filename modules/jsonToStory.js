@@ -1,5 +1,5 @@
-var {Prompt} = require('./prompt.js');
-var emojis = require('./emojis.js');
+const {Prompt} = require('./prompt.js');
+const emojis = require('./emojis.js');
 
 const dir = './stories/';
 const fs = require('fs');

@@ -34,7 +34,7 @@ module.exports = {
         .filter(file => !file.toLowerCase().includes("template"))
         .filter(file => file.endsWith(".js"))
         .forEach(file => {
-            let cmdfile = require(`./${file}`);
+            const cmdfile = require(`./${file}`);
 
             cmdObj[count] = new cmdClass(count);
 
@@ -106,7 +106,7 @@ module.exports = {
 
             let cmd = data.argsTxt;
             try {
-                let file = require(`./${cmd}.js`);
+                const file = require(`./${cmd}.js`);
 
                 let de = file.desc;
                 let us = file.usage;

@@ -27,7 +27,7 @@ client.on("message", (message) => {
             console.log("The command \""+command+"\" doesn't exist");
             return
         }
-        let commandFile = require(path);
+        const commandFile = require(path);
         let data = {
             command: command,
             argsArr: argsArr,
