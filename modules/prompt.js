@@ -93,7 +93,7 @@ class Choice {
         enumerable: true,
         value: true,
         writable: true
-      });*/ 
+      });*/
       // Uncomment that if you want force-disable functionality
     }
     return this;
@@ -188,11 +188,9 @@ class Prompt {
     var emojis = this.choices
     .filter((choice) => choice.enabled)
     .map((choice) => choice.emoji).concat([exit]);
-    
+
     var msg = await channel.send(this.formatted);
-    await emojis.reduce((lastPromise, emoji) => {
-      return lastPromise.then(() => msg.react(emoji));
-    }, Promise.resolve());
+    emojis.forEach((emoji)=>msg.react(emoji));
     return msg;
   }
 
