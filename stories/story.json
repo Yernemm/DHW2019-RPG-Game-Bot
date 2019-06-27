@@ -44,7 +44,7 @@
         {
             "emoji": "⏫",
             "choiceText": "Focus and keep moving",
-            "text": "", 
+            "text": "",
             "choices":[
                 1
             ]
@@ -101,7 +101,7 @@
         {
             "emoji": "👊",
             "choiceText": "Keep on fighting",
-            "text": "Wait, really? You you actually want to take on three armoured bandits as an unarmed courier? Alright then... As you fight, you begin to realise certain details about the bandits. They sure are wearing expensive-looking armour. Their swords are also surprisignly sharp. Then, the realisation strikes you harder than your enemy's sword. They weren't bandits afterall! They were-\n\nAnd then everything faded to black.",
+            "text": "Wait, really? You you actually want to take on three armoured bandits as an unarmed courier? Alright then... As you fight, you begin to realise certain details about the bandits. They sure are wearing expensive-looking armour. Their swords are also surprisingly sharp. Then, the realisation strikes you harder than your enemy's sword. They weren't bandits afterall! They were-\n\nAnd then everything faded to black.",
             "choices":[
                 13
             ]
