@@ -5,7 +5,8 @@ const dir = './stories/';
 const fs = require('fs');
 
 var secretChoices = [];
-const secretChance = 0.1;
+var secretChoiceIds = [];
+const secretChance = 1;
 
 function load(storyName){
     //Load the json file
@@ -15,7 +16,7 @@ function load(storyName){
     //Load startup message.
     Prompt.save(-1, 'You have started the story.\nCurrently loaded story: ' + storyObj.name + '\n\nTo select your choices, react to the message with the emoji which corresponds to the option you want.\n\nOccasionally, you may come across a choice **which is written in bold.** These are special choices which only have a small chance of appearing. They will lead you to hidden story paths.', [
         Prompt.makeChoice(0, '✅', 'Start the story.')
-      ]);
+      ], 0x41e63e);
 
     //Iterate through all prompts in the file
     for(i = 0; i < storyObj.prompts.length; i++){
@@ -41,10 +42,17 @@ function load(storyName){
                 .handle(thisChoice => shuffleSecrets());
             secretChoices.push(sec);
             choicesArray.push(sec);
+            secretChoiceIds.push(choiceId);
         }
 
         //Save the prompt to the list.
-        Prompt.save(i, storyObj.prompts[i].text, choicesArray);
+        if(secretChoiceIds.includes(i))
+            Prompt.save(i, storyObj.prompts[i].text, choicesArray, 0xf0f71b);
+        else if(storyObj.prompts[i].death === true)
+            Prompt.save(i, storyObj.prompts[i].text, choicesArray, 0xb81d1d);
+        else
+            Prompt.save(i, storyObj.prompts[i].text, choicesArray, 0x2fb8de);
+        
     }
 }
 

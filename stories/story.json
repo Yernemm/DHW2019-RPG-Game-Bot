@@ -120,7 +120,8 @@
             "text": "You tried stabbing the other prisoners, only to find out you have no weapon! The guards realise what you tried to do and kill you on the spot by feeding you to the wagon horses.",
             "choices":[
                 18
-            ]
+            ],
+            "death":true
         },
         {
             "emoji": "👄",
@@ -128,7 +129,8 @@
             "text": "You tried to Ralof him but since you are a voiceless protagonist, you only manage to slightly open your mouth without creating a single sound. Ralof takes offense to this and shoves his entire arm down your throat, killing you from the inside.",
             "choices":[
                 18
-            ]
+            ],
+            "death":true
         },
         {
             "emoji": "🏃",
@@ -136,7 +138,8 @@
             "text": "You try to run from the encounter but you can't run away from a trainer battle! Ralof deploys his shiny Alduin, which then proceedes to devour you. You fainted.",
             "choices":[
                 18
-            ]
+            ],
+            "death":true
         },
         {
             "emoji": "❌",
@@ -144,7 +147,8 @@
             "text": "Well, you try to exit the game. But since the game is now closed, your hypothetical character no longer exists. So in a way, you still die? I guess?",
             "choices":[
                 18
-            ]
+            ],
+            "death":true
         },
         {
             "emoji": "💀",
@@ -152,7 +156,8 @@
             "text": "You died.",
             "choices":[
                 0
-            ]
+            ],
+            "death":true
         }
     ]
 }

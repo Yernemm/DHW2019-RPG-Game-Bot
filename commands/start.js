@@ -17,7 +17,7 @@ module.exports = {
     //let player = data.message.author;
 
 
-    msg = await game.start(data.message);
+    msg = await game.start(data.message, data);
 
     //data.message.channel.send(msg);
     return msg;

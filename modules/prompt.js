@@ -128,8 +128,8 @@ class Prompt {
    * @param {Array<Choice>} choices An array of Choice objects to be attached to this Prompt
    * @returns {Prompt} The Prompt
    */
-  static save(id, text, choices) {
-    var saved = new Prompt(id, text, choices);
+  static save(id, text, choices, color) {
+    var saved = new Prompt(id, text, choices, color);
     Prompt.registry.set(id, saved);
     return Prompt.registry.get(id);
   }
@@ -152,7 +152,7 @@ class Prompt {
    * @param {String|Function} text The flavor text for this Prompt. If a function, the property will become a getter
    * @param {Array<Choice>} choices An array of Choice objects to be attached to this Prompt
    */
-  constructor(id, text, choices) {
+  constructor(id, text, choices, color) {
     this.id = id;
     if (isFunction(text)) {
       Object.defineProperty(this, 'text', {
@@ -169,6 +169,7 @@ class Prompt {
       });
     }
     this.choices = choices.map(choice => choice.assign(this));
+    this.color = color;
   }
 
   /**
@@ -182,16 +183,30 @@ class Prompt {
     return this.text + '\n\n' + choices.join('\n');
   }
 
+  //For the embeds.
+  get displayObj() {
+
+    var choices = this.choices
+      .filter(choice => choice.enabled);
+
+    let promptData = {
+      choices: choices,
+      prompt: this
+    }
+
+    return promptData;
+  }
+
   /**
    * Sends the Prompt in message form to a given channel. After sending the message, reactions will be added.
    * @returns {Promise<Discord.Message>} The message sent
    */
-  async display(channel, player) {
+  async display(channel, player, data) {
     var emojis = this.choices
     .filter(choice => choice.enabled)
     .map(choice => choice.emoji).concat([exit]);
 
-    var msg = await channel.send(new PrettyMsg(this.formatted, player));
+    var msg = await channel.send(new PrettyMsg(this.displayObj, player, data));
     await emojis.reduce((lastPromise, emoji) => {
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());

@@ -1,10 +1,11 @@
 module.exports.status = "init";
+
 const discord = require("discord.js");
 const fs = require('fs');
 const config = require('./config.json');  //This holds the token and some configurable data.
 const {logCmd, logTxt} = require('./modules/log.js');
 const client = new discord.Client();
-
+module.exports.client = client;
 //TODO: Get the command handler to not crash when an invalid command is sent. Gonna need some try catch blocks with proper error handling around the commandfile require probably.
 //Command handler for messages.
 client.on("message", message => {
@@ -42,7 +43,13 @@ client.on("message", message => {
 });
 
 // Handler function is in the game.js file
-client.on('messageReactionAdd', require('./modules/game.js').react);
+client.on('messageReactionAdd', ( (messageReaction, user) => {
+  let data = {
+    client: client,
+    config: config
+};
+  require('./modules/game.js').react(messageReaction, user, data)
+} ));
 
 client.on('error', error => {
   console.error('The WebSocket encountered an error:', error);

@@ -8,7 +8,8 @@ const jsonStory = require('./jsonToStory.js');
 //createStory();
 jsonStory.load('story.json');
 
-async function react(messageReaction, user) {
+async function react(messageReaction, user, data) {
+  console.log(data)
   if (user.bot) return;
   var { message, emoji } = messageReaction;
 
@@ -25,7 +26,11 @@ async function react(messageReaction, user) {
 
   if (result === null) {  // Exit
     gameUser.exit();
-    message.channel.send(new PrettyMsg("[bye-bye]", user));
+    let promptData = {
+      justText: true,
+      text: "[bye-bye]"
+    }
+    message.channel.send(new PrettyMsg(promptData, user, data));
     gameUser.message = null; // Clear the player's message, player is not playing anymore
   } else {
     gameUser.message = result.msg.id;
@@ -33,9 +38,9 @@ async function react(messageReaction, user) {
   }
 };
 
-async function start(message) {
+async function start(message, data) {
   var gameUser = GameUser.retrieve(message.author.id);
-  var msg = await Prompt.get(gameUser.prompt).display(message.channel, message.author);
+  var msg = await Prompt.get(gameUser.prompt).display(message.channel, message.author, data);
   gameUser.message = msg.id;
   return Prompt.get(gameUser.prompt).formatted;
 };
