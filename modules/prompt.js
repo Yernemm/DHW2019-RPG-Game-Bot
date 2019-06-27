@@ -185,8 +185,8 @@ class Prompt {
    * @returns {Promise<Discord.Message>} The message sent
    */
   async display(channel) {
-    const config = require('./config.json');
-    const {logtxt} = require('./modules/log.js');
+    const config = require('../config.json');
+    const {logtxt} = require('./log.js');
     const {client}= require('../server.js');
     var emojis = this.choices
     .filter((choice) => choice.enabled)
