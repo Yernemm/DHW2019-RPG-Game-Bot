@@ -185,23 +185,27 @@ class Prompt {
    * @returns {Promise<Discord.Message>} The message sent
    */
   async display(channel) {
-    const config = require('../config.json');
-    const {logTxt} = require('./log.js');
-    const {client}= require('../server.js');
     var emojis = this.choices
-    .filter((choice) => choice.enabled)
-    .map((choice) => choice.emoji).concat([exit]);
+      .filter((choice) => choice.enabled)
+        .map((choice) => choice.emoji).concat([exit]);
 
     var msg = await channel.send(this.formatted);
     await emojis.reduce((lastPromise, emoji) => {
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());
-    await msg.reactions.array()
+    await removeUserReactions(msg)  // remove extra reactions before we're ready
+    return msg;
+  }
+
+  removeUserReactions(msg){ // keeps bot's reactions only
+    const config = require('../config.json');
+    const {logTxt} = require('./log.js');
+    const {client}= require('../server.js');
+    msg.reactions.array()
       .forEach(reaction => reaction.users.array()
         .filter((user) => user.id != client.user.id)
           .forEach(user => reaction.remove(user)
-            .catch(()=>logTxt(client, config, "ERROR: Could I please have permission to manage messages?")))); // remove extra reactions before we're ready
-    return msg;
+            .catch(()=>logTxt(client, config, "ERROR: Could I please have permission to manage messages? :)"))));
   }
 
   /**
