@@ -21,7 +21,8 @@ async function react(messageReaction, user) {
   var prompt = Prompt.get(gameUser.prompt);
   var result = await prompt.go(prompt.pick(emoji), message.channel);
 
-  if (result === null) {
+  if (result === null) {  // Exit
+    message.channel.send("[bye-bye]")
     gameUser.message = null; // Clear the player's message, player is not playing anymore
   } else {
     gameUser.message = result.msg.id;
