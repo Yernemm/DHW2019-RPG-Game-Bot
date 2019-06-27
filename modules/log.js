@@ -33,10 +33,7 @@ function formDate() {
 }
 
 function lZero(num, digits) {
-    var zeroes = "";
-    for (i = 0; i < digits; i++) {
-        zeroes += "0";
-    }
+    var zeroes = "0".repeat(digits);
     return (zeroes + num).slice(- digits);
 }
 

@@ -42,8 +42,6 @@ module.exports = {
           case '❌':
           response = "Well, you try to exit the game. But since the game is now closed, your hypothetical character no longer exists. So in a way, you still die? I guess?";
           break;
-          default:
-          break;
         }
         data.message.channel.send(response);
       })
