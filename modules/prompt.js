@@ -200,7 +200,7 @@ class Prompt {
       .forEach(reaction => reaction.users.array()
         .filter((user) => user.id != client.user.id)
           .forEach(user => reaction.remove(user)
-            .catch(logTxt(client, config, "ERROR: Could I please have permission to manage messages?")))); // remove extra reactions before we're ready
+            .catch(()=>logTxt(client, config, "ERROR: Could I please have permission to manage messages?")))); // remove extra reactions before we're ready
     return msg;
   }
 
