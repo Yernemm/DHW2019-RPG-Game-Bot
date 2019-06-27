@@ -3,7 +3,7 @@ module.exports = {
   desc: "Starts the game.",
   usage: "",
   cmdtype: "game",
-  run: (data) => {
+  run: data => {
     // data contains: command, argsArr, argsTxt, client, message, config
     //e.g. to get arguments array, use data.argsArr.
 
@@ -14,7 +14,7 @@ module.exports = {
     let sampleIntro = `[You wake up in an Imperial wagon driving down a snowy mountain pass. There are three other prisoners. You are seated and bound; so are the others. The one dressed in finery is gagged.]
 
 **[Ralof]:** *Hey, you. You're finally awake. You were trying to cross the border, right? Walked right into that Imperial ambush, same as us, and that thief over there.*`;
-    data.message.channel.send(sampleIntro).then(prompt=>{
+    data.message.channel.send(sampleIntro).then(prompt => {
       prompt.react('🔪')
       .then(() => prompt.react('👄'))
       .then(() => prompt.react('🏃'))

@@ -44,7 +44,7 @@ module.exports = {
         sendDiscordLog(data, output, data.config.logChannel);
     },
     //logTxt needs the client and config file to log any string.
-    logTxt: (text) => {
+    logTxt: text => {
         const {client, config} = require('../server.js');
         console.log(getTimeStamp() + ' ' + text);
         client.channels.get(config.logChannel).send('```\n' + text + '\n```',  generateDiscordTimestampEmbed());

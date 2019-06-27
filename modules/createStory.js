@@ -16,7 +16,7 @@ function createStory() {
 
   Prompt.save(5, 'Peering through the forest, you see a bandit.', [
     Prompt.makeChoice(6, emojis.a, 'Attack the bandit'),
-    Prompt.makeChoice(1, emojis.b, 'Turn back').handle(function (thisChoice) {
+    Prompt.makeChoice(1, emojis.b, 'Turn back').handle(thisChoice => {
       Prompt.get(1).choices[1].disable();
     })
   ]);
@@ -24,7 +24,7 @@ function createStory() {
   Prompt.save(6, 'You approach the bandit, he sees you and raises his club.', [
     Prompt.makeChoice(7, emojis.a, 'Suprise the bandit by running at him head on'),
     Prompt.makeChoice(8, emojis.b, 'Wait for the bandit to swing, and then strike'),
-    Prompt.makeChoice(9, emojis.c, 'Run! This was a bad idea!').handle(function (thisChoice) {
+    Prompt.makeChoice(9, emojis.c, 'Run! This was a bad idea!').handle(thisChoice => {
       Prompt.get(1).choices[1].disable();
     })
   ]);
@@ -32,7 +32,7 @@ function createStory() {
   Prompt.save(7, 'The bandit avoids your attack, and strikes you with his club knocking you out.\n**You Died! Game Over!**', []);
 
   Prompt.save(8, 'The bandit swings his club. You avoid his attack, and quickly strike, knocking him out.', [
-    Prompt.makeChoice(1, emojis.a, 'Head back to town').handle(function (thisChoice) {
+    Prompt.makeChoice(1, emojis.a, 'Head back to town').handle(thisChoice => {
       Prompt.get(1).choices[1].disable();
     })
   ]);

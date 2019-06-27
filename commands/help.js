@@ -3,7 +3,7 @@ module.exports = {
   desc: "Shows help information",
   usage: "[command]",
   cmdtype: "help",
-  run: (data) => {  //😋😝😜😛
+  run: data => {  //😋😝😜😛
     const { desc, usage, cmdtype } = this;
     // data contains: command, argsArr, argsTxt, client, message
     //e.g. to get arguments array, use data.argsArr.
@@ -56,18 +56,13 @@ module.exports = {
     function getAllTypes(){
         var types = [];
 
-        cmdObj.forEach( (thisCmd) => {
-            types.push(thisCmd.type);
-        });
+        cmdObj.forEach(thisCmd => types.push(thisCmd.type));
         return types.filter(onlyUnique).sort();
     }
 
     function getAllCmdByType(type){
         var cmds = [];
-        cmdObj.forEach( (thisCmd) => {
-            if (thisCmd.type == type)
-                cmds.push(thisCmd);
-        });
+        cmdObj.filter(thisCmd => thisCmd.type == type).forEach(thisCmd => cmds.push(thisCmd));
         return cmds;
     }
 
@@ -81,40 +76,30 @@ module.exports = {
         case null:
         case "":
         case " ":
-
             msg = `Discord Hack Week 2019  RPG Game Bot\r\nTo get help for a specific command, do ${data.config.prefix}help [command]\r\n\r\n`;
-
-
             msg += "Commands:\r\n";
-
-
             var cmdInfoMsg = "";
-            console.log(getAllTypes());
-            getAllTypes().forEach( (type)=>{
-                cmdInfoMsg+= "**" + capitalizeFirstLetter(type) + "**\r\n```";
-                getAllCmdByType(type).forEach( (tcmd) =>{
-                    cmdInfoMsg += `${tcmd.name} `;
-                });
-                cmdInfoMsg+= "```\r\n";
 
+            console.log(getAllTypes());
+            getAllTypes().forEach(type => {
+                cmdInfoMsg+= "**" + capitalizeFirstLetter(type) + "**\r\n```";
+                getAllCmdByType(type).forEach(tcmd => cmdInfoMsg += `${tcmd.name} `);
+                cmdInfoMsg+= "```\r\n";
             });
 
             msg += "\r\n" + cmdInfoMsg;
-
             break;
         default:
-
             let cmd = data.argsTxt;
             try {
                 const file = require(`./${cmd}.js`);
-
                 let de = file.desc;
                 let us = file.usage;
+
                 msg = `**Help for ${data.config.prefix}${cmd}**\r\n${de}\r\nUsage: ${data.config.prefix}${cmd} ${us}`;
             } catch (err) {
                 msg = `Command \"${data.argsTxt}\" not found.\r\nUse **>help** to see available commands.`;
             }
-
             break;
     }
 

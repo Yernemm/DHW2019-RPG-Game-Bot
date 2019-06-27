@@ -5,7 +5,7 @@ module.exports = {
   desc: "Starts the game.",
   usage: "",
   cmdtype: "game",
-  run: async (data) => {
+  run: async data => {
     // data contains: command, argsArr, argsTxt, client, message, config
     //e.g. to get arguments array, use data.argsArr.
 

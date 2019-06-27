@@ -27,11 +27,9 @@ function load(storyName){
             //Iterate through all the choices and add them to the choice array.
             storyObj.prompts[i].choices.forEach(choiceId => {
                 choicesArray.push(Prompt.makeChoice(
-                    choiceId, storyObj.prompts[choiceId].emoji, storyObj.prompts[choiceId].choiceText
-                ).handle(function (thisChoice) {
-                    shuffleSecrets();
-                  })
-                )
+                    choiceId, storyObj.prompts[choiceId].emoji, storyObj.prompts[choiceId].choiceText)
+                    .handle(thisChoice => shuffleSecrets())
+                );
             });
         }
 
@@ -39,10 +37,8 @@ function load(storyName){
         if(storyObj.prompts[i].secretChoice != null){
             let choiceId = storyObj.prompts[i].secretChoice;
             var sec = Prompt.makeChoice(
-                choiceId, storyObj.prompts[choiceId].emoji, "**" + storyObj.prompts[choiceId].choiceText + "**"
-            ).handle(function (thisChoice) {
-                shuffleSecrets();
-              });
+                choiceId, storyObj.prompts[choiceId].emoji, "**" + storyObj.prompts[choiceId].choiceText + "**")
+                .handle(thisChoice => shuffleSecrets());
             secretChoices.push(sec);
             choicesArray.push(sec);
         }
@@ -60,7 +56,7 @@ function rng(chance){
 //Randomly decide if each secret choice is diabled.
 function shuffleSecrets(){
     if(secretChoices.length > 0){
-        secretChoices.forEach(choice =>{
+        secretChoices.forEach(choice => {
             if(rng(secretChance))
                 choice.enable();
             else

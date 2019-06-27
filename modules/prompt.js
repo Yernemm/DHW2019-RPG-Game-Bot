@@ -167,7 +167,7 @@ class Prompt {
         writable: true
       });
     }
-    this.choices = choices.map((choice) => choice.assign(this));
+    this.choices = choices.map(choice => choice.assign(this));
   }
 
   /**
@@ -176,8 +176,8 @@ class Prompt {
    */
   get formatted() {
     var choices = this.choices
-      .filter((choice) => choice.enabled)
-      .map((choice) => choice.formatted);
+      .filter(choice => choice.enabled)
+      .map(choice => choice.formatted);
     return this.text + '\n\n' + choices.join('\n');
   }
 
@@ -187,8 +187,8 @@ class Prompt {
    */
   async display(channel) {
     var emojis = this.choices
-      .filter((choice) => choice.enabled)
-        .map((choice) => choice.emoji).concat([exit]);
+      .filter(choice => choice.enabled)
+        .map(choice => choice.emoji).concat([exit]);
 
     var msg = await channel.send(this.formatted);
     await emojis.reduce((lastPromise, emoji) => {
@@ -201,9 +201,9 @@ class Prompt {
     const {client} = require('../server.js');
     msg.reactions.array()
       .forEach(reaction => reaction.users.array()
-        .filter((user) => user.id != client.user.id)
+        .filter(user => user.id != client.user.id)
           .forEach(user => reaction.remove(user)
-            .catch(()=>logTxt("ERROR: Could I please have permission to manage messages? :)"))));
+            .catch(() => logTxt("ERROR: Could I please have permission to manage messages? :)"))));
     return msg;
   }
 
@@ -213,7 +213,7 @@ class Prompt {
    */
   pick(emoji) {
     if (emoji.toString() === exit) return null; // Player clicked the exit option
-    return this.choices.findIndex((choice) => choice.emoji === emoji.toString());
+    return this.choices.findIndex(choice => choice.emoji === emoji.toString());
   }
 
   /**

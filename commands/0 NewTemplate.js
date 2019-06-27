@@ -3,7 +3,7 @@ module.exports = {
   desc: "",
   usage: "",
   cmdtype: "",
-  run: (data) => {
+  run: data => {
     // data contains: command, argsArr, argsTxt, client, message, config
     //e.g. to get arguments array, use data.argsArr.
 

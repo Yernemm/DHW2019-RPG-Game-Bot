@@ -42,7 +42,7 @@ class Util {
 
   static format(str, ...replacers) {
     if (typeof str !== 'string') throw new TypeError('Expected a string');
-    return str.replace(/{(\d+)}/g, function(match, number) { 
+    return str.replace(/{(\d+)}/g, (match, number) => { 
       return typeof replacers[number] !== 'undefined' ? replacers[number] : match;
     });
   }
