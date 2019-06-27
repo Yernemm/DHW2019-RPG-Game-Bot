@@ -17,32 +17,35 @@ class Choice {
   constructor(dest, emoji, text, enabled = true) {
     this.dest = dest;
     this.emoji = emoji;
-    if (isFunction(text)) {
-      Object.defineProperty(this, 'text', {
-        configurable: true,
-        enumerable: true,
-        get: text
-      });
-      Object.defineProperty(this, 'enabled', {
-        configurable: true,
-        enumerable: true,
-        get: enabled
-      });
-    } else {
-      Object.defineProperty(this, 'text', {
-        configurable: true,
-        enumerable: true,
-        value: text,
-        writable: true
-      });
-      Object.defineProperty(this, 'enabled', {
-        configurable: true,
-        enumerable: true,
-        value: enabled,
-        writable: true
-      });
-    }
     this.parent = null;
+    if (isFunction(text))
+      Object.defineProperties(this, {
+        text: {
+          configurable: true,
+          enumerable: true,
+          get: text
+        },
+        enabled: {
+          configurable: true,
+          enumerable: true,
+          get: enabled
+        }
+      });
+    else
+      Object.defineProperies(this, {
+        text: {
+          configurable: true,
+          enumerable: true,
+          value: text,
+          writable: true
+        },
+        enabled: {
+          configurable: true,
+          enumerable: true,
+          value: enabled,
+          writable: true
+        }
+      });
   }
 
   /**
