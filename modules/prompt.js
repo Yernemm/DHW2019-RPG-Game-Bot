@@ -203,7 +203,7 @@ class Prompt {
     .forEach(reaction => reaction.users.array()
       .filter(user => user.id != bot.id)
       .forEach(user => reaction.remove(user)
-        .catch(noMsgManagePerm)));
+        .catch(Prompt.noMsgManagePerm)));
     return msg;
   }
 
@@ -212,7 +212,7 @@ class Prompt {
     msg.reactions.array()
     .filter(reaction => reaction.emoji != chosenEmoji)
     .forEach(reaction => reaction.remove(bot)
-      .catch(noMsgManagePerm));
+      .catch(Prompt.noMsgManagePerm));
   }
 
   static noMsgManagePerm(){
