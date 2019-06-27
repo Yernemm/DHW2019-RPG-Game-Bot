@@ -1,4 +1,6 @@
 const discord = require('discord.js');
+const {client, config} = require('server.js');
+
 module.exports = {
     //logCmd takes the command data and command output. Then logs it.
     logCmd: function (data, output) {
@@ -6,7 +8,7 @@ module.exports = {
         sendDiscordLog(data, output, data.config.logChannel);
     },
     //logTxt needs the client and config file to log any string.
-    logTxt: function (client, config, text){
+    logTxt: function (text){
         console.log(getTimeStamp() + ' ' + text)
         client.channels.get(config.logChannel).send('```\n' + text + '\n```',  generateDiscordTimestampEmbed() )
     }
@@ -38,7 +40,7 @@ function sendDiscordLog(data, output, channel){
 function getTimeStamp(){
     return  '[' + formDate() + ']';
   }
-  
+
 
 function formDate() {
     var d = new Date();
