@@ -1,4 +1,5 @@
 const { Collection } = require('discord.js');
+const { Client } = require('../server.js');
 const exit = require('./emojis.js').exit;
 
 function isFunction(functionToCheck) {
