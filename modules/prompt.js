@@ -1,5 +1,5 @@
 const { Collection } = require('discord.js');
-const server = require('../server.js');
+const client = require('../server.js').client;
 const exit = require('./emojis.js').exit;
 
 function isFunction(functionToCheck) {
@@ -194,7 +194,12 @@ class Prompt {
     await emojis.reduce((lastPromise, emoji) => {
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());
-    await msg.reactions.array().forEach(reaction => reaction.users.array().filter((user) => user.id != server.client.user.id).forEach(user => reaction.remove(user))); // remove extra reactions before we're ready
+    console.log(client);
+    console.log(client.user.tag);
+    await msg.reactions.array()
+      .forEach(reaction => reaction.users.array()
+        .filter((user) => user.id != client.user.id)
+          .forEach(user => reaction.remove(user))); // remove extra reactions before we're ready
     return msg;
   }
 
