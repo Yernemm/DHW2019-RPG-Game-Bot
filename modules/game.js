@@ -1,7 +1,7 @@
 const discord = require('discord.js');
 const {GameUser} = require('./gameUser.js');
 const {Prompt} = require('./prompt.js');
-const {PrettyMsg} = require('./PrettyMsg.js');
+const {PrettyMsg} = require('./prettyMsg.js');
 //const {createStory} = require('./createStory.js');
 const jsonStory = require('./jsonToStory.js');
 
