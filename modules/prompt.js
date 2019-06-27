@@ -185,7 +185,9 @@ class Prompt {
    * @returns {Promise<Discord.Message>} The message sent
    */
   async display(channel) {
-    var client = require('../server.js').client;
+    const config = require('./config.json');
+    const {logtxt} = require('./modules/log.js');
+    const {client}= require('../server.js');
     var emojis = this.choices
     .filter((choice) => choice.enabled)
     .map((choice) => choice.emoji).concat([exit]);
@@ -197,7 +199,8 @@ class Prompt {
     await msg.reactions.array()
       .forEach(reaction => reaction.users.array()
         .filter((user) => user.id != client.user.id)
-          .forEach(user => reaction.remove(user))); // remove extra reactions before we're ready
+          .forEach(user => reaction.remove(user)
+            .catch(logTxt(client, config, "ERROR: Could I please have permission to manage messages?")))); // remove extra reactions before we're ready
     return msg;
   }
 
