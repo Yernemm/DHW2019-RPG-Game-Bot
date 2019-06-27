@@ -1,5 +1,5 @@
-const { Collection } = require('discord.js');
-const exit = require('./emojis.js').exit;
+const {Collection} = require('discord.js');
+const {exit} = require('./emojis.js');
 
 function isFunction(functionToCheck) {
   return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
@@ -193,11 +193,11 @@ class Prompt {
     await emojis.reduce((lastPromise, emoji) => {
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());
-    await removeUserReactions(msg)  // remove extra reactions before we're ready
+    await Prompt.removeUserReactions(msg)  // remove extra reactions before we're ready
     return msg;
   }
 
-  removeUserReactions(msg){ // keeps bot's reactions only
+  static removeUserReactions(msg){ // keeps bot's reactions only
     const config = require('../config.json');
     const {logTxt} = require('./log.js');
     const {client}= require('../server.js');
