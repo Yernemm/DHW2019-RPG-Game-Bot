@@ -194,7 +194,7 @@ class Prompt {
     await emojis.reduce((lastPromise, emoji) => {
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());
-    console.log("---\n"+msg.createReactionCollector().collected.keys+"\n---");
+    console.log("---\n"+msg.createReactionCollector().collected.keys()+"\n---");
     await msg.createReactionCollector((reaction) => !reaction.me).collected.forEach((reaction) => reaction.remove()); // remove extra reactions before we're ready
     return msg;
   }
