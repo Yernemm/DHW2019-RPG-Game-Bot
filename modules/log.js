@@ -41,7 +41,7 @@ function lZero(num, digits) {
 }
 
 function noLogChannelPerm(){
-  console.error("ERROR: It would appear that I don't have permission to send to the log channel! ;-;");
+  console.error(getTimeStamp() + " ERROR: It would appear that I don't have permission to send to the log channel! ;-;");
 }
 
 function noChannelPerm(){
