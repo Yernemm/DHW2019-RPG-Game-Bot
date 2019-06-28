@@ -24,12 +24,14 @@ async function react(messageReaction, user){
   var prompt = Prompt.get(gameUser.prompt);
   var result = await prompt.go(prompt.pick(emoji), channel, user);
 
-  if (result == null) {  // Exit
-    gameUser.exit();
-    if(result === null) await Prompt.tempMsg.delete();  // Delete temp message and reset variable (if result is not undefined)
+  if (result == null) {  // null or undefined
+    if(result === null){  // Exit
+      await Prompt.tempMsg.delete();  // Delete temp message and reset variable (if result is not undefined)
+      channel.send(new PrettyMsg("Bye-bye!", user)).catch(() => noChannelPerm(channel));
+    }
     Prompt.tempMsg = null;
-    channel.send(new PrettyMsg("Bye-bye!", user)).catch(() => noChannelPerm(channel));
     gameUser.message = null; // Clear the player's message, player is not playing anymore
+    gameUser.exit();
   } else {
     gameUser.message = result.msg.id;
     gameUser.prompt = result.next.id;
