@@ -273,7 +273,8 @@
             "text": "The bandits are so impressed by your skills that they beg you to join them. You, of course, accept this offer. You and the bandits walk along together to the bandit HQ. You meet up with the bandit leaders and discuss your next plans. The bandits celebrate your joining by throwing a massive party where you all get completely wasted on cheap wine. Your past life is no longer important. You are now a part of this community. And you have never been happier.\n\nThe End.",
             "choices":[
                 0
-            ]
+            ],
+            "end": true
         }
     ]
 }
