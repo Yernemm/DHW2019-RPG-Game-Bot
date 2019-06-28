@@ -209,12 +209,13 @@ class Prompt {
     .map(choice => choice.emoji).concat([exit]);
 
     var msg = await channel.send(new PrettyMsg(this.displayObj, player)).catch(() => noChannelPerm(channel));
-    await channel.startTyping();
-    channel.stopTyping();
+    var loadingMsg = channel.send("`Loading options...`").then(channel.startTyping);
+
     await emojis.reduce((lastPromise, emoji) => {
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());
-    channel.send("`Loading options...`").then(message => message.delete()); // Temp msg
+
+    channel.stopTyping().then(loadingMsg.delete);
     return msg;
   }
 
