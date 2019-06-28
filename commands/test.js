@@ -12,7 +12,7 @@ module.exports = {
     // COMMAND LOGIC
     let msg = "hewwo worl owo";
 
-    var channel = data.message; 
+    var channel = data.message.channel; 
     channel.send(msg).catch(() => noChannelPerm(channel));
     return msg;
 }};
