@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-var client = require('../server.js').client;
+const {client} = require('../server.js');
 
 class PrettyMsg extends Discord.RichEmbed {
   constructor(message, player){ // message can either be a string or prompt data, acquired from the displayObj method of a Prompt instance
