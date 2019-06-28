@@ -209,6 +209,7 @@ class Prompt {
     .map(choice => choice.emoji).concat([exit]);
 
     var msg = await channel.send(new PrettyMsg(this.displayObj, player)).catch(() => noChannelPerm(channel));
+    if(Prompt.tempMsg) Prompt.tempMsg.delete();
     channel.startTyping();
 
     await emojis.reduce((lastPromise, emoji) => {
@@ -216,7 +217,7 @@ class Prompt {
     }, Promise.resolve());
 
     channel.stopTyping();
-    channel.send("** **");
+    Prompt.tempMsg = await channel.send("** **");
     return msg;
   }
 
