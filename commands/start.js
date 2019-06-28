@@ -1,4 +1,5 @@
 const game = require('../modules/game.js');
+//const {noChannelPerm} = require('../modules/log.js');
 
 module.exports = {
   // METADATA
@@ -19,6 +20,6 @@ module.exports = {
 
     msg = await game.start(data.message);
 
-    //data.message.channel.send(msg);
+    //data.message.channel.send(msg).catch(noChannelPerm);
     return msg;
 }};

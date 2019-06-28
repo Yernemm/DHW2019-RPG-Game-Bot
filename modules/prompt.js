@@ -2,6 +2,7 @@ const {logTxt} = require('./log.js');
 const {Collection} = require('discord.js');
 const {exit} = require('./emojis.js');
 const {PrettyMsg} = require('./prettyMsg.js');
+const {noChannelPerm} = require('../modules/log.js');
 
 function isFunction(functionToCheck) {
   return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
@@ -206,7 +207,7 @@ class Prompt {
     .filter(choice => choice.enabled)
     .map(choice => choice.emoji).concat([exit]);
 
-    var msg = await channel.send(new PrettyMsg(this.displayObj, player));
+    var msg = await channel.send(new PrettyMsg(this.displayObj, player)).catch(noChannelPerm);
     await emojis.reduce((lastPromise, emoji) => {
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());

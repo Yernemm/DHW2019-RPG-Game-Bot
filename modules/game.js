@@ -3,6 +3,7 @@ const {GameUser} = require('./gameUser.js');
 const {Prompt} = require('./prompt.js');
 const {PrettyMsg} = require('./prettyMsg.js');
 const jsonStory = require('./jsonToStory.js');
+const {noChannelPerm} = require('../modules/log.js');
 
 //createStory();
 jsonStory.load('story.json');
@@ -24,7 +25,7 @@ async function react(messageReaction, user){
 
   if (result === null) {  // Exit
     gameUser.exit();
-    message.channel.send(new PrettyMsg("Bye-bye!", user));
+    message.channel.send(new PrettyMsg("Bye-bye!", user)).catch(noChannelPerm);
     gameUser.message = null; // Clear the player's message, player is not playing anymore
   } else {
     gameUser.message = result.msg.id;

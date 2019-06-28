@@ -1,3 +1,5 @@
+const {noChannelPerm} = require('../modules/log.js');
+
 module.exports = {
   // METADATA
   desc: "A first testing command.",
@@ -10,6 +12,6 @@ module.exports = {
     // COMMAND LOGIC
     let msg = "hewwo worl owo";
 
-    data.message.channel.send(msg);
+    data.message.channel.send(msg).catch(noChannelPerm);
     return msg;
 }};

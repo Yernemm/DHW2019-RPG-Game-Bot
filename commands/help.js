@@ -1,3 +1,5 @@
+const {noChannelPerm} = require('../modules/log.js');
+
 module.exports = {
   // METADATA
   desc: "Shows help information",
@@ -103,6 +105,6 @@ module.exports = {
             break;
     }
 
-    data.message.channel.send(msg);
+    data.message.channel.send(msg).catch(noChannelPerm);
     return msg;
 }};

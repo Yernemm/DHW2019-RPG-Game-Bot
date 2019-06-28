@@ -19,7 +19,9 @@ function generateDiscordTimestampEmbed(){
 }
 
 function sendDiscordLog(data, output, channel){
-    data.client.channels.get(channel).send(generateLogText(data, output), generateDiscordLogEmbed(data, output));
+    data.client.channels.get(channel)
+    .send(generateLogText(data, output), generateDiscordLogEmbed(data, output))
+    .catch(noLogChannelPerm);
 }
 
 function getTimeStamp(){
@@ -37,6 +39,10 @@ function lZero(num, digits) {
     return (zeroes + num).slice(- digits);
 }
 
+function noLogChannelPerm(){
+  console.log("ERROR: It would appear that I don't have permission to send to the log channel! ;-;");
+}
+
 module.exports = {
     //logCmd takes the command data and command output. Then logs it.
     logCmd: (data, output) => {
@@ -47,6 +53,9 @@ module.exports = {
     logTxt: text => {
         const {client, config} = require('../server.js');
         console.log(getTimeStamp() + ' ' + text);
-        client.channels.get(config.logChannel).send('```\n' + text + '\n```',  generateDiscordTimestampEmbed());
-    }
+        client.channels.get(config.logChannel)
+        .send('```\n' + text + '\n```',  generateDiscordTimestampEmbed())
+        .catch(noLogChannelPerm);
+    },
+    noChannelPerm: () => console.log("ERROR: I don't have permission to reply to you in this channel! D:")
 };

@@ -3,9 +3,9 @@ module.exports.status = "init";
 const discord = require("discord.js");
 const fs = require('fs');
 const config = require('./config.json');  //This holds the token and some configurable data.
-const {logCmd, logTxt} = require('./modules/log.js');
+const {logCmd, logTxt, noChannelPerm} = require('./modules/log.js');
 const client = new discord.Client();
-module.exports.client = client;
+
 //TODO: Get the command handler to not crash when an invalid command is sent. Gonna need some try catch blocks with proper error handling around the commandfile require probably.
 //Command handler for messages.
 client.on("message", message => {
@@ -24,7 +24,7 @@ client.on("message", message => {
     fs.access(path, fs.R_OK, err => {
         if (err) {
             //if the command doesn't exist or isn't readable send message to user that the command doesn't exist and console logs it
-            message.channel.send("This command doesn't exist");
+            message.channel.send("This command doesn't exist").catch(noChannelPerm);
             console.log("The command \""+command+"\" doesn't exist");
             return
         }
