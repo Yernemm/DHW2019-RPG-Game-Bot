@@ -208,10 +208,12 @@ class Prompt {
     .filter(choice => choice.enabled)
     .map(choice => choice.emoji).concat([exit]);
 
+    channel.startTyping();
     var msg = await channel.send(new PrettyMsg(this.displayObj, player)).catch(() => noChannelPerm(channel));
     await emojis.reduce((lastPromise, emoji) => {
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());
+    channel.stopTyping();
     return msg;
   }
 
