@@ -210,6 +210,7 @@ class Prompt {
 
     if(Prompt.tempMsg) await Prompt.tempMsg.delete();
     var msg = await channel.send(new PrettyMsg(this.displayObj, player)).catch(() => noChannelPerm(channel));
+    if(!msg) return; // couldn't send msg
     channel.startTyping();
 
     await emojis.reduce((lastPromise, emoji) => {
