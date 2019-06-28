@@ -2,7 +2,7 @@ const {logTxt} = require('./log.js');
 const {Collection} = require('discord.js');
 const {exit} = require('./emojis.js');
 const {PrettyMsg} = require('./prettyMsg.js');
-const {noChannelPerm} = require('../modules/log.js');
+const {noChannelPerm, noMsgManagePerm} = require('../modules/log.js');
 const {getClient} = require('../server.js');
 
 function isFunction(functionToCheck) {
@@ -221,7 +221,7 @@ class Prompt {
     .forEach(reaction => reaction.users.array()
       .filter(user => user.id != bot.id)
       .forEach(user => reaction.remove(user)
-        .catch(Prompt.noMsgManagePerm)));
+        .catch(noMsgManagePerm)));
     return msg;
   }
 
@@ -230,11 +230,7 @@ class Prompt {
     msg.reactions.array()
     .filter(reaction => reaction.emoji != chosenEmoji)
     .forEach(reaction => reaction.remove(bot)
-      .catch(Prompt.noMsgManagePerm));
-  }
-
-  static noMsgManagePerm(){
-    logTxt("ERROR: Could I please have permission to manage messages? :)")
+      .catch(noMsgManagePerm));
   }
 
   /**

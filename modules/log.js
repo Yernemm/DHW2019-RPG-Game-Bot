@@ -57,5 +57,6 @@ module.exports = {
         .send('```\n' + text + '\n```',  generateDiscordTimestampEmbed())
         .catch(noLogChannelPerm);
     },
-    noChannelPerm: () => console.log("ERROR: I don't have permission to reply to you in this channel! D:")
+    noChannelPerm: () => console.log("ERROR: I don't have permission to reply to you in this channel! D:"),
+    noMsgManagePerm: () => logTxt("ERROR: Could I please have permission to manage messages? :)")
 };
