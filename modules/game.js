@@ -26,7 +26,7 @@ async function react(messageReaction, user){
 
   if (result == null) {  // Exit
     gameUser.exit();
-    await Prompt.tempMsg.delete();  // Delete temp message and reset variable
+    if(result === null) await Prompt.tempMsg.delete();  // Delete temp message and reset variable (if result is not undefined)
     Prompt.tempMsg = null;
     channel.send(new PrettyMsg("Bye-bye!", user)).catch(() => noChannelPerm(channel));
     gameUser.message = null; // Clear the player's message, player is not playing anymore
