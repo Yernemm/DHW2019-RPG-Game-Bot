@@ -6,7 +6,7 @@ const fs = require('fs');
 
 var secretChoices = [];
 var secretChoiceIds = [];
-const secretChance = 0.1;
+const secretChance = 1;
 
 function load(storyName){
     //Load the json file
