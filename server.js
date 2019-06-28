@@ -4,6 +4,7 @@ const discord = require("discord.js");
 const fs = require('fs');
 const config = require('./config.json');  //This holds the token and some configurable data.
 const {logCmd, logTxt, noChannelPerm} = require('./modules/log.js');
+const game = require('./modules/game.js');
 const client = new discord.Client();
 
 //TODO: Get the command handler to not crash when an invalid command is sent. Gonna need some try catch blocks with proper error handling around the commandfile require probably.
@@ -45,7 +46,7 @@ client.on("message", message => {
 
 // Handler function is in the game.js file
 client.on('messageReactionAdd', ( (messageReaction, user) => {
-  require('./modules/game.js').react(messageReaction, user);
+  game.react(messageReaction, user);
 }));
 
 client.on('error', error => {

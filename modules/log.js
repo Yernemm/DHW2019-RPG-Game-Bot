@@ -1,4 +1,5 @@
 const discord = require('discord.js');
+const {client, config} = require('../server.js');
 
 function generateLogText(data, output){
     return `\`[${data.message.author.tag}]: ${data.message.content}\`\n\`[Response]:${output}\``;
@@ -51,7 +52,6 @@ module.exports = {
     },
     //logTxt needs the client and config file to log any string.
     logTxt: text => {
-        const {client, config} = require('../server.js');
         console.log(getTimeStamp() + ' ' + text);
         client.channels.get(config.logChannel)
         .send('```\n' + text + '\n```',  generateDiscordTimestampEmbed())
