@@ -214,7 +214,7 @@ class Prompt {
     await emojis.reduce((lastPromise, emoji) => {
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());
-    channel.send().delete();
+    channel.send("`Loading options...`").delete();
     return msg;
   }
 
