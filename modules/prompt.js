@@ -215,6 +215,7 @@ class Prompt {
       .then(() => msg.react(emoji))
       .then(channel.stopTyping());
     }, Promise.resolve());
+    channel.stopTyping(true);
     return msg;
   }
 
