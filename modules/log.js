@@ -41,7 +41,7 @@ function lZero(num, digits) {
 }
 
 function noLogChannelPerm(){
-  console.log("ERROR: It would appear that I don't have permission to send to the log channel! ;-;");
+  console.error("ERROR: It would appear that I don't have permission to send to the log channel! ;-;");
 }
 
 module.exports = {
