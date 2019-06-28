@@ -215,7 +215,7 @@ class Prompt {
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());
 
-    channel.stopTyping().then(loadingMsg.delete);
+    new Promise(channel.stopTyping).then(loadingMsg.delete);
     return msg;
   }
 
