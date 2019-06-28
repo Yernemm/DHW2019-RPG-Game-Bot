@@ -210,13 +210,14 @@ class Prompt {
 
     var msg = await channel.send(new PrettyMsg(this.displayObj, player)).catch(() => noChannelPerm(channel));
     var loadingMsg = channel.send("`Loading options...`");
-    loadingMsg.then(channel.startTyping);
+    loadingMsg.then(() => channel.startTyping());
 
     await emojis.reduce((lastPromise, emoji) => {
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());
 
-    new Promise(channel.stopTyping).then(loadingMsg.delete);
+    new Promise(() => channel.stopTyping())
+    .then(() => loadingMsg.delete());
     return msg;
   }
 
