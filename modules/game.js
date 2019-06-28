@@ -24,7 +24,7 @@ async function react(messageReaction, user){
   var prompt = Prompt.get(gameUser.prompt);
   var result = await prompt.go(prompt.pick(emoji), channel, user);
 
-  if (result === null) {  // Exit
+  if (!result) {  // Exit
     gameUser.exit();
     await Prompt.tempMsg.delete();  // Delete temp message and reset variable
     Prompt.tempMsg = null;
