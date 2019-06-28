@@ -1,4 +1,8 @@
-module.exports.status = "init";
+module.exports={
+  status: "init",
+  getClient: () => client,
+  getConfig: () => config
+};
 
 const discord = require("discord.js");
 const fs = require('fs');
@@ -63,8 +67,4 @@ client.on('rateLimit', info => {
 
 client.login(config.token);
 
-module.exports={
-  status: "loaded",
-  getClient: () => client,
-  getConfig: () => config
-};
+module.exports.status = "loaded";
