@@ -1,5 +1,6 @@
 {
     "name": "Main Story",
+    "secretChance": 1,
     "prompts":[
         {
             "emoji": "🔁",

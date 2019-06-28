@@ -6,12 +6,13 @@ const fs = require('fs');
 
 var secretChoices = [];
 var secretChoiceIds = [];
-const secretChance = 1;
+var secretChance = 0.1;
 
 function load(storyName){
     //Load the json file
     let storyPath = dir + storyName;
     let storyObj = JSON.parse(fs.readFileSync(storyPath, 'utf8'));
+    if(storyObj.secretChance) secretChance = storyObj.secretChance;
 
     //Load startup message.
     Prompt.save(-1, 'You have started the story.\nCurrently loaded story: ' + storyObj.name + '\n\nTo select your choices, react to the message with the emoji which corresponds to the option you want.\n\nOccasionally, you may come across a choice **which is written in bold.** These are special choices which only have a small chance of appearing. They will lead you to hidden story paths.', [
@@ -54,7 +55,7 @@ function load(storyName){
             Prompt.save(i, storyObj.prompts[i].text, choicesArray, 0x4de8db);
         else
             Prompt.save(i, storyObj.prompts[i].text, choicesArray, 0x2fb8de);
-        
+
     }
 }
 
