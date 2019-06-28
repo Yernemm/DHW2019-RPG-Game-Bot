@@ -52,6 +52,10 @@ function noMsgManagePerm(){
   logTxt("ERROR: Could I please have permission to manage messages? :)");
 }
 
+function noReactPerm(){
+  logTxt("ERROR: I Don't have permission to react to messages! :/");
+}
+
 function logCmd(data, output){  //logCmd takes the command data and command output. Then logs it.
   console.log(generateConsoleText(data,output));
   sendDiscordLog(data, output, getConfig().logChannel);
@@ -68,5 +72,6 @@ module.exports = {
     logCmd: logCmd,
     logTxt: logTxt,
     noChannelPerm: noChannelPerm,
-    noMsgManagePerm: noMsgManagePerm
+    noMsgManagePerm: noMsgManagePerm,
+    noReactPerm: noReactPerm
 };

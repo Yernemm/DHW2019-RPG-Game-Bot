@@ -2,7 +2,7 @@ const {logTxt} = require('./log.js');
 const {Collection} = require('discord.js');
 const {exit} = require('./emojis.js');
 const {PrettyMsg} = require('./prettyMsg.js');
-const {noChannelPerm, noMsgManagePerm} = require('../modules/log.js');
+const {noChannelPerm, noMsgManagePerm, noReactPerm} = require('../modules/log.js');
 const {getClient} = require('../server.js');
 
 function isFunction(functionToCheck) {
@@ -214,7 +214,7 @@ class Prompt {
     channel.startTyping();
 
     await emojis.reduce((lastPromise, emoji) => {
-      return lastPromise.then(() => msg.react(emoji));
+      return lastPromise.then(() => msg.react(emoji).catch(noReactPerm));
     }, Promise.resolve());
 
     channel.stopTyping();
