@@ -210,8 +210,8 @@ class Prompt {
 
     var msg = await channel.send(new PrettyMsg(this.displayObj, player)).catch(() => noChannelPerm(channel));
     await channel.startTyping();
+    channel.stopTyping();
     await emojis.reduce((lastPromise, emoji) => {
-      if(emoji == exit) channel.stopTyping();
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());
     return msg;
