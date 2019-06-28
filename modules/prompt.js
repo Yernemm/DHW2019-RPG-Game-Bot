@@ -208,7 +208,7 @@ class Prompt {
     .filter(choice => choice.enabled)
     .map(choice => choice.emoji).concat([exit]);
 
-    if(Prompt.tempMsg) await Prompt.tempMsg.delete();
+    if(Prompt.tempMsg[channel]) await Prompt.tempMsg[channel].delete();
     var msg = await channel.send(new PrettyMsg(this.displayObj, player)).catch(() => noChannelPerm(channel));
     if(!msg) return; // couldn't send msg
     channel.startTyping();
@@ -218,9 +218,9 @@ class Prompt {
     }, Promise.resolve());
 
     channel.stopTyping();
-    Prompt.tempMsg = await channel.send("** **").catch(() => {
+    Prompt.tempMsg[channel] = await channel.send("** **").catch(() => {
       noChannelPerm(channel);
-      Prompt.tempMsg = null;
+      Prompt.tempMsg[channel] = null;
     });
     return msg;
   }
@@ -286,6 +286,7 @@ class Prompt {
  * @type {Discord.Collection<String, Prompt>}
  */
 Prompt.registry = new Collection();
+Prompt.tempMsg = [];
 
 module.exports = {
   Prompt: Prompt
