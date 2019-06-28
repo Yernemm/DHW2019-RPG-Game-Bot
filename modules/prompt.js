@@ -216,7 +216,7 @@ class Prompt {
     }, Promise.resolve());
 
     channel.stopTyping();
-    channel.send("`Options loaded.`").then(message => message.delete());
+    channel.send("** **");
     return msg;
   }
 
