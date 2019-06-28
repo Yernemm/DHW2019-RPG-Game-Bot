@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 var client = require('../server.js').client;
 
 class PrettyMsg extends Discord.RichEmbed {
-  constructor(promptData, player){
+  constructor(message, player){ // message can either be a string or prompt data, acquired from the displayObj method of a Prompt instance
     super();
 
     this
@@ -10,13 +10,13 @@ class PrettyMsg extends Discord.RichEmbed {
     .setFooter(client.user.username, client.user.avatarURL)
     .setAuthor(player.username, player.avatarURL);
 
-    if(typeof promptData == 'string') this.setDescription(promptData.text)
+    if(typeof message == 'string') this.setDescription(message)
     else{
       this
-      .setDescription(promptData.prompt.text)
+      .setDescription(message.prompt.text)
       .addBlankField()
-      .setColor(promptData.prompt.color);
-      promptData.choices.forEach(choice => this.addField(choice.emoji, choice.text, true));
+      .setColor(message.prompt.color);
+      message.choices.forEach(choice => this.addField(choice.emoji, choice.text, true));
     }
   }
 }
