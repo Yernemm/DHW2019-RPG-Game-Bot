@@ -214,7 +214,7 @@ class Prompt {
     channel.startTyping();
 
     await emojis.reduce((lastPromise, emoji) => {
-      return lastPromise.then(() => msg.react(emoji).catch(noReactPerm));
+      return lastPromise.then(() => msg.react(emoji).catch(() => noReactPerm(channel)));
     }, Promise.resolve());
 
     channel.stopTyping();
@@ -231,7 +231,7 @@ class Prompt {
     .forEach(reaction => reaction.users.array()
       .filter(user => user.id != bot.id)
       .forEach(user => reaction.remove(user)
-        .catch(noMsgManagePerm)));
+        .catch(() => noMsgManagePerm(msg.channel))));
     return msg;
   }
 
@@ -240,7 +240,7 @@ class Prompt {
     msg.reactions.array()
     .filter(reaction => reaction.emoji != chosenEmoji)
     .forEach(reaction => reaction.remove(bot)
-      .catch(noMsgManagePerm));
+      .catch(() => noMsgManagePerm(msg.channel)));
   }
 
   /**

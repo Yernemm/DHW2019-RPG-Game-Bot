@@ -45,15 +45,15 @@ function noLogChannelPerm(){
 }
 
 function noChannelPerm(channel){
-  logTxt("ERROR: I don't have permission to reply to you in this channel! D:", "`Channel:` " + channel);
+  logTxt("ERROR: I don't have permission to reply to you! D:", "`Channel:` " + channel);
 }
 
-function noMsgManagePerm(){
-  logTxt("ERROR: Could I please have permission to manage messages? :)");
+function noMsgManagePerm(channel){
+  logTxt("ERROR: Could I please have permission to manage messages? :)", "`Channel:` " + channel);
 }
 
-function noReactPerm(){
-  logTxt("ERROR: I Don't have permission to react to messages! :/");
+function noReactPerm(channel){
+  logTxt("ERROR: I Don't have permission to react to messages! :/", "`Channel:` " + channel);
 }
 
 function logCmd(data, output){  //logCmd takes the command data and command output. Then logs it.
