@@ -1,5 +1,5 @@
 {
-  "name": "dhw2019-rpg-game-bot",
+  "name": "The Discord Parable",
   "version": "1.1.0",
   "description": "Discord Hack Week 2019 RPG Game Bot",
   "main": "server.js",

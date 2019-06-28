@@ -76,7 +76,7 @@ module.exports = {
         case null:
         case "":
         case " ":
-            msg = `Discord Hack Week 2019  RPG Game Bot\r\nTo get help for a specific command, do ${data.config.prefix}help [command]\r\n\r\n`;
+            msg = `Discord Hack Week 2019 - The Discord Parable\r\nTo get help for a specific command, do ${data.config.prefix}help [command]\r\n\r\n`;
             msg += "Commands:\r\n";
             var cmdInfoMsg = "";
 
