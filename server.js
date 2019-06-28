@@ -7,7 +7,7 @@ module.exports={
 const discord = require("discord.js");
 const fs = require('fs');
 const config = require('./config.json');  //This holds the token and some configurable data.
-const {logCmd, logTxt, noChannelPerm} = require('./modules/log.js');
+const {logCmd, logTxt, noChannelPerm, getTimeStamp} = require('./modules/log.js');
 const game = require('./modules/game.js');
 const client = new discord.Client();
 
@@ -32,7 +32,7 @@ client.on("message", message => {
         if (err) {
             //if the command doesn't exist or isn't readable send message to user that the command doesn't exist and console logs it
             channel.send("This command doesn't exist").catch(() => noChannelPerm(channel));
-            console.log("The command \""+command+"\" doesn't exist");
+            console.log(getTimeStamp() + " The command \""+command+"\" doesn't exist");
             return
         }
         const commandFile = require(path);
@@ -55,7 +55,7 @@ client.on('messageReactionAdd', ( (messageReaction, user) => {
 }));
 
 client.on('error', error => {
-  console.error('The WebSocket encountered an error:', error);
+  console.error(getTimeStamp() + ' The WebSocket encountered an error:', error);
 });
 
 client.on('ready', () => {
@@ -64,7 +64,7 @@ client.on('ready', () => {
 });
 
 client.on('rateLimit', info => {
-  console.log(`RateLimit: ${info.method.toUpperCase()} ${info.timeDifference}ms ${info.path}`);
+  console.log(`${getTimeStamp()} RateLimit: ${info.method.toUpperCase()} ${info.timeDifference}ms ${info.path}`);
 });
 
 client.login(config.token);

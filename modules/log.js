@@ -73,5 +73,6 @@ module.exports = {
     logTxt: logTxt,
     noChannelPerm: noChannelPerm,
     noMsgManagePerm: noMsgManagePerm,
-    noReactPerm: noReactPerm
+    noReactPerm: noReactPerm,
+    getTimeStamp: getTimeStamp
 };
