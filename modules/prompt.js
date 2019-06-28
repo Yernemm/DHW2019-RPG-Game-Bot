@@ -214,6 +214,7 @@ class Prompt {
     await emojis.reduce((lastPromise, emoji) => {
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());
+    msg.edit(msg.content);
     return msg;
   }
 
