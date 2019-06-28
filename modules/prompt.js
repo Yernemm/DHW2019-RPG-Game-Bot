@@ -3,7 +3,7 @@ const {Collection} = require('discord.js');
 const {exit} = require('./emojis.js');
 const {PrettyMsg} = require('./prettyMsg.js');
 const {noChannelPerm} = require('../modules/log.js');
-const {client} = require('../server.js');
+const {getClient} = require('../server.js');
 
 function isFunction(functionToCheck) {
   return functionToCheck && {}.toString.call(functionToCheck) === '[object Function]';
@@ -216,7 +216,7 @@ class Prompt {
   }
 
   static removeUserReactions(msg){ // keeps bot's reactions only
-    const bot = client.user;
+    const bot = getClient().user;
     msg.reactions.array()
     .forEach(reaction => reaction.users.array()
       .filter(user => user.id != bot.id)
@@ -226,7 +226,7 @@ class Prompt {
   }
 
   static removeOldReactions(msg, chosenEmoji){ // remove non-chosen reactions
-    const bot = client.user;
+    const bot = getClient().user;
     msg.reactions.array()
     .filter(reaction => reaction.emoji != chosenEmoji)
     .forEach(reaction => reaction.remove(bot)

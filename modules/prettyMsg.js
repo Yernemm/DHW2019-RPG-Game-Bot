@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const {client} = require('../server.js');
+const {getClient} = require('../server.js');
 
 class PrettyMsg extends Discord.RichEmbed {
   constructor(message, player){ // message can either be a string or prompt data, acquired from the displayObj method of a Prompt instance
@@ -7,7 +7,7 @@ class PrettyMsg extends Discord.RichEmbed {
 
     this
     .setTimestamp()
-    .setFooter(client.user.username, client.user.avatarURL)
+    .setFooter(getClient().user.username, getClient().user.avatarURL)
     .setAuthor(player.username, player.avatarURL);
 
     if(typeof message == 'string') this.setDescription(message)

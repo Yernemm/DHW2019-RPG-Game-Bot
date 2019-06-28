@@ -65,6 +65,6 @@ client.login(config.token);
 
 module.exports={
   status: "loaded",
-  client: client,
-  config: config
+  getClient: () => client,
+  getConfig: () => config
 };

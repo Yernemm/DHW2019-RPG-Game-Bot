@@ -1,4 +1,5 @@
 const discord = require('discord.js');
+const {getClient, getConfig} = require('../server.js');
 
 function generateLogText(data, output){
     return `\`[${data.message.author.tag}]: ${data.message.content}\`\n\`[Response]:${output}\``;
@@ -19,7 +20,7 @@ function generateDiscordTimestampEmbed(){
 }
 
 function sendDiscordLog(data, output, channel){
-    data.client.channels.get(channel)
+    getClient().channels.get(channel)
     .send(generateLogText(data, output), generateDiscordLogEmbed(data, output))
     .catch(noLogChannelPerm);
 }
@@ -47,13 +48,12 @@ module.exports = {
     //logCmd takes the command data and command output. Then logs it.
     logCmd: (data, output) => {
         console.log(generateConsoleText(data,output));
-        sendDiscordLog(data, output, data.config.logChannel);
+        sendDiscordLog(data, output, getConfig().logChannel);
     },
     //logTxt needs the client and config file to log any string.
     logTxt: text => {
-        const {client, config} = require('../server.js');
         console.log(getTimeStamp() + ' ' + text);
-        client.channels.get(config.logChannel)
+        getClient().channels.get(getConfig().logChannel)
         .send('```\n' + text + '\n```',  generateDiscordTimestampEmbed())
         .catch(noLogChannelPerm);
     },
