@@ -44,19 +44,29 @@ function noLogChannelPerm(){
   console.error("ERROR: It would appear that I don't have permission to send to the log channel! ;-;");
 }
 
+function noChannelPerm(){
+  logTxt("ERROR: I don't have permission to reply to you in this channel! D:");
+}
+
+function noMsgManagePerm(){
+  logTxt("ERROR: Could I please have permission to manage messages? :)");
+}
+
+function logCmd(data, output){  //logCmd takes the command data and command output. Then logs it.
+  console.log(generateConsoleText(data,output));
+  sendDiscordLog(data, output, getConfig().logChannel);
+}
+
+function logTxt(text){  //logTxt needs the client and config file to log any string.
+  console.log(getTimeStamp() + ' ' + text);
+  getClient().channels.get(getConfig().logChannel)
+  .send('```\n' + text + '\n```',  generateDiscordTimestampEmbed())
+  .catch(noLogChannelPerm);
+}
+
 module.exports = {
-    //logCmd takes the command data and command output. Then logs it.
-    logCmd: (data, output) => {
-        console.log(generateConsoleText(data,output));
-        sendDiscordLog(data, output, getConfig().logChannel);
-    },
-    //logTxt needs the client and config file to log any string.
-    logTxt: text => {
-        console.log(getTimeStamp() + ' ' + text);
-        getClient().channels.get(getConfig().logChannel)
-        .send('```\n' + text + '\n```',  generateDiscordTimestampEmbed())
-        .catch(noLogChannelPerm);
-    },
-    noChannelPerm: () => logTxt("ERROR: I don't have permission to reply to you in this channel! D:"),
-    noMsgManagePerm: () => logTxt("ERROR: Could I please have permission to manage messages? :)")
+    logCmd: logCmd,
+    logTxt: logTxt,
+    noChannelPerm: noChannelPerm,
+    noMsgManagePerm: noMsgManagePerm
 };
