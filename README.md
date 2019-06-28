@@ -25,3 +25,6 @@ The dream team:
 * Go to your application in the Discord Developer Portal
 * In OAuth2, select "bot" and "Manage Messages"
 * Go to the generated link and select your server
+
+### Test the bot:
+You can test the bot here: [The Discord Parable](https://discord.gg/Kjt4ZhR)
