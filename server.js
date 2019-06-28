@@ -53,7 +53,7 @@ client.on('error', error => {
 
 client.on('ready', () => {
   logTxt(`Bot started on ${client.user.tag}\n    HEWWO I AM NAO ONLINE UWU`);
-  client.user.setActivity("say ;start", {type: ""});
+  client.user.setActivity("say ;start", {type: null});
 });
 
 client.on('rateLimit', info => {
