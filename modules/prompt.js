@@ -286,6 +286,7 @@ class Prompt {
  * @type {Discord.Collection<String, Prompt>}
  */
 Prompt.registry = new Collection();
+Prompt.tempMsg = [];
 
 module.exports = {
   Prompt: Prompt
