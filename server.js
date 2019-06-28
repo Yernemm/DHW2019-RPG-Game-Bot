@@ -44,12 +44,8 @@ client.on("message", message => {
 
 // Handler function is in the game.js file
 client.on('messageReactionAdd', ( (messageReaction, user) => {
-  let data = {
-    client: client,
-    config: config
-};
-  require('./modules/game.js').react(messageReaction, user, data)
-} ));
+  require('./modules/game.js').react(messageReaction, user);
+}));
 
 client.on('error', error => {
   console.error('The WebSocket encountered an error:', error);

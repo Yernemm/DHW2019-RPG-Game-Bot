@@ -201,12 +201,12 @@ class Prompt {
    * Sends the Prompt in message form to a given channel. After sending the message, reactions will be added.
    * @returns {Promise<Discord.Message>} The message sent
    */
-  async display(channel, player, data) {
+  async display(channel, player) {
     var emojis = this.choices
     .filter(choice => choice.enabled)
     .map(choice => choice.emoji).concat([exit]);
 
-    var msg = await channel.send(new PrettyMsg(this.displayObj, player, data));
+    var msg = await channel.send(new PrettyMsg(this.displayObj, player));
     await emojis.reduce((lastPromise, emoji) => {
       return lastPromise.then(() => msg.react(emoji));
     }, Promise.resolve());
