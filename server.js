@@ -17,7 +17,7 @@ client.on("message", message => {
     const argsArr = message.content.slice(config.prefix.length).trim().split(/ +/g);
     const command = argsArr.shift().toLowerCase().replace(/[^a-zA-Z ]/g, "");
     const argsTxt = message.content.slice(config.prefix.length + command.length).trim();
-    if(command.length < 4) return; // Ignore commands of 3 or less letters
+    if(command.length < 2) return; // Ignore commands of 1 or no letters
 
     const path = `./commands/${command}.js`;
 
