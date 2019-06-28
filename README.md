@@ -1,7 +1,7 @@
 # "The Discord Parable" for Discord Hack Week 2019
 
 ## Ok, what does the bot do?
-This bot provides a non-linear story with many branching paths and multiple endings. There are some hidden paths which only show up 10% of the time to encourage re-playability. 
+This bot provides a non-linear story with many branching paths and multiple endings. There are some hidden paths which only show up 10% of the time to encourage re-playability. The story is stored in JSON and editable.
 
 ## What is the story about?
 It is a comedy, fantasy-themed story. You are a courier tasked with delivering a package for your client. The client, however, does not give you very good directions. You reach a set of two diverging paths and it's up to you to choose which path to follow...
