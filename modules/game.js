@@ -24,9 +24,9 @@ async function react(messageReaction, user){
   var prompt = Prompt.get(gameUser.prompt);
   var result = await prompt.go(prompt.pick(emoji), channel, user);
 
-  if (!result) {  // Exit
+  if (result === null) {  // Exit
     gameUser.exit();
-    await Prompt.tempMsg.delete();  // Delete temp message and reset variable
+    //await Prompt.tempMsg.delete();  // Delete temp message and reset variable
     Prompt.tempMsg = null;
     channel.send(new PrettyMsg("Bye-bye!", user)).catch(() => noChannelPerm(channel));
     gameUser.message = null; // Clear the player's message, player is not playing anymore
