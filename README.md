@@ -1,7 +1,10 @@
-# RPG Game Bot for Discord Hack Week 2019
+# "The Discord Parable" for Discord Hack Week 2019
 
 ## Ok, what does the bot do?
-It provides the player with a pristine RPG gaming experience.
+This bot provides a non-linear story with many branching paths and multiple endings. There are some hidden paths which only show up 10% of the time to encourage re-playability. 
+
+## What is the story about?
+It is a comedy, fantasy-themed story. You are a courier tasked with delivering a package for your client. The client, however, does not give you very good directions. You reach a set of two diverging paths and it's up to you to choose which path to follow...
 
 ## Tell me, who is responsible for this mess?
 The dream team:
