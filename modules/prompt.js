@@ -218,7 +218,10 @@ class Prompt {
     }, Promise.resolve());
 
     channel.stopTyping();
-    Prompt.tempMsg = await channel.send("** **").catch(() => noChannelPerm(channel));
+    Prompt.tempMsg = await channel.send("** **").catch(() => {
+      noChannelPerm(channel);
+      Prompt.tempMsg = null;
+    });
     return msg;
   }
 
