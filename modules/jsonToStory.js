@@ -52,7 +52,7 @@ function load(storyName){
         else if(storyObj.prompts[i].death === true)
             Prompt.save(i, storyObj.prompts[i].text, choicesArray, 0xb81d1d);
         else if(storyObj.prompts[i].end === true)
-            Prompt.save(i, storyObj.prompts[i].text, choicesArray, 0x4de8db);
+            Prompt.save(i, storyObj.prompts[i].text, choicesArray, 0xfc42f9);
         else
             Prompt.save(i, storyObj.prompts[i].text, choicesArray, 0x2fb8de);
 
