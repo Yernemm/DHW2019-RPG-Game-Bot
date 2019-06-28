@@ -13,8 +13,10 @@ const client = new discord.Client();
 
 //Command handler for messages.
 client.on("message", message => {
+    var channel = message.channel;
+
     if (message.author.bot) return; //Ignore messages from other bots and itself.
-    if (!message.channel.guild) return; //Only look in server text channels.
+    if (!channel.guild) return; //Only look in server text channels.
     if (message.content.indexOf(config.prefix) !== 0) return; //Only respond to commands which use the command prefix.
 
     //Split up the message into data to be used by commands.
@@ -29,7 +31,7 @@ client.on("message", message => {
     fs.access(path, fs.R_OK, err => {
         if (err) {
             //if the command doesn't exist or isn't readable send message to user that the command doesn't exist and console logs it
-            message.channel.send("This command doesn't exist").catch(noChannelPerm);
+            channel.send("This command doesn't exist").catch(() => noChannelPerm(channel));
             console.log("The command \""+command+"\" doesn't exist");
             return
         }

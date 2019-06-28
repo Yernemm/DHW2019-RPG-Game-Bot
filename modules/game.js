@@ -20,12 +20,13 @@ async function react(messageReaction, user){
 
   Prompt.removeOldReactions(message, emoji);
 
+  var channel = message.channel;
   var prompt = Prompt.get(gameUser.prompt);
-  var result = await prompt.go(prompt.pick(emoji), message.channel, user);
+  var result = await prompt.go(prompt.pick(emoji), channel, user);
 
   if (result === null) {  // Exit
     gameUser.exit();
-    message.channel.send(new PrettyMsg("Bye-bye!", user)).catch(noChannelPerm);
+    channel.send(new PrettyMsg("Bye-bye!", user)).catch(() => noChannelPerm(channel));
     gameUser.message = null; // Clear the player's message, player is not playing anymore
   } else {
     gameUser.message = result.msg.id;

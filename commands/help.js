@@ -105,6 +105,7 @@ module.exports = {
             break;
     }
 
-    data.message.channel.send(msg).catch(noChannelPerm);
+    var channel = data.message; 
+    channel.send(msg).catch(() => noChannelPerm(channel));
     return msg;
 }};

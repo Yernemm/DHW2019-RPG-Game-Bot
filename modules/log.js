@@ -44,8 +44,8 @@ function noLogChannelPerm(){
   console.error(getTimeStamp() + " ERROR: It would appear that I don't have permission to send to the log channel! ;-;");
 }
 
-function noChannelPerm(){
-  logTxt("ERROR: I don't have permission to reply to you in this channel! D:");
+function noChannelPerm(channel){
+  logTxt("ERROR: I don't have permission to reply to you in this channel! D:", "`Channel:` " + channel);
 }
 
 function noMsgManagePerm(){
@@ -57,10 +57,10 @@ function logCmd(data, output){  //logCmd takes the command data and command outp
   sendDiscordLog(data, output, getConfig().logChannel);
 }
 
-function logTxt(text){  //logTxt needs the client and config file to log any string.
+function logTxt(text, extra = ''){  //extra is text that will be printed right after the code block
   console.log(getTimeStamp() + ' ' + text);
   getClient().channels.get(getConfig().logChannel)
-  .send('```\n' + text + '\n```',  generateDiscordTimestampEmbed())
+  .send('```\n' + text + '\n```' + extra,  generateDiscordTimestampEmbed())
   .catch(noLogChannelPerm);
 }
 

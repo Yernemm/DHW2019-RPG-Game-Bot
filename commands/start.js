@@ -20,6 +20,7 @@ module.exports = {
 
     msg = await game.start(data.message);
 
-    //data.message.channel.send(msg).catch(noChannelPerm);
+    //var channel = data.message;
+    //channel.send(msg).catch(() => noChannelPerm(channel));
     return msg;
 }};

@@ -12,6 +12,7 @@ module.exports = {
     // COMMAND LOGIC
     let msg = ""; // Message to return to user (will be logged)
 
-    data.message.channel.send(msg).catch(noChannelPerm);
+    var channel = data.message;
+    channel.send(msg).catch(() => noChannelPerm(channel));
     return msg;
 }};
