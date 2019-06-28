@@ -31,8 +31,9 @@ client.on("message", message => {
     fs.access(path, fs.R_OK, err => {
         if (err) {
             //if the command doesn't exist or isn't readable send message to user that the command doesn't exist and console logs it
-            channel.send("This command doesn't exist").catch(() => noChannelPerm(channel));
-            console.log(getTimeStamp() + " The command \""+command+"\" doesn't exist");
+            //  /\ no don't
+            //channel.send("This command doesn't exist").catch(() => noChannelPerm(channel));
+            //console.log(getTimeStamp() + " The command \""+command+"\" doesn't exist");
             return
         }
         const commandFile = require(path);
