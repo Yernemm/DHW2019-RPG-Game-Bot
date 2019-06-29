@@ -1,7 +1,7 @@
 # "The Discord Parable" for Discord Hack Week 2019
 
-### Test the bot:
-You can test the bot here: [The Discord Parable](https://discord.gg/Kjt4ZhR)
+### Try the bot:
+You can try the bot here: [The Discord Parable](https://discord.gg/Kjt4ZhR)
 
 ## Ok, what does the bot do?
 This bot provides a non-linear story with many branching paths and multiple endings. There are some hidden paths which only show up 10% of the time to encourage re-playability. The story is stored in JSON and editable.
