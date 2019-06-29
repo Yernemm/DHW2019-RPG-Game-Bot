@@ -8,7 +8,8 @@
             "text": "You have been walking down a long winding road for what seemed like hours. Your courier job pays well of course, but you sometimes wonder if it's worth all the effort. Your client didn't specify your destination very well either. 'A large red-bricked cottage, just at the end of this road', she told you. Yet eventually, the road splits. You stare down both roads. The road to your right enters a deep, dark forest. The road to your left leads you down by a gentle stream. Not knowing which one will lead you to the recipient, you head down the left route as it is clearly safer and much more pleasant.",
             "choices": [
                 2, 3, 4
-            ]
+            ],
+            "secretChoice":44
         },
         {
             "emoji": "🤠",
@@ -46,17 +47,17 @@
         {
             "emoji": "⏫",
             "choiceText": "Focus and keep moving",
-            "text": "",
+            "text": "Of course, you have to focus on the task at hand. You have to deliver the package. You keep walking along the path, admiring the nature around you. After a brief walk, you reach a village. This must be it! Of course, going left was definitely the way to go. She didn't specify which way becacue nobody in their right mind would turn right at that point! Confident in yourself, you enter the village.",
             "choices":[
-                1
+                46
             ]
         },
         {
             "emoji": "🌳",
             "choiceText": "Ponder about nature",
-            "text": "",
+            "text": "Yet, you keep thinking about the birds. They are free and untamed beings. They don't have to follow any rules, deliver any packages for other people! They just do whatever they like. And you think how wonderful that would be. They can't even be aware of the struggles of human life. They are able to blissfully ignore us.",
             "choices":[
-                1
+                5, 43
             ]
         },
         {
@@ -240,7 +241,7 @@
             "choiceText": "Keep going",
             "text": "You keep walking along the road. You feel like you are approaching your destination. Sure enough, you enter a village.",
             "choices":[
-                1
+                46
             ]
         },
         {
@@ -348,7 +349,7 @@
             "choiceText": "Ponder your existence",
             "text": "You keep thinking about the universe, the stars, everything. You realise you are completely insignificant in the vastness of the universe. Your existence is virtually negligible. You are but a particle stuck to a piece of dust, floating through the galaxy. Your entire life is worth nothing in the history of the planet, the solar system, galaxy, the universe. You feel yourself ascending as you realise what this really is.",
             "choices":[
-                1
+                45
             ]
         },
         {
@@ -359,6 +360,93 @@
                 0
             ],
             "death":true
-        }
+        },
+        {
+            "emoji":"❓",
+            "choiceText": "Keep thinking",
+            "text": "You begin thinking about the rest of nature. The trees, the rivers, the mountains. All of them existing in harmony. The vastness of the world is much greater than yours. You could not exist and that would not matter to them. It wouldn't matter to anything. The world would go on.",
+            "choices":[
+                41
+            ]
+        },
+        {
+            "emoji":"👀",
+            "choiceText": "Stand still",
+            "text": "Uh, okay then. You just stand around for a couple seconds and then you go left...",
+            "choices":[
+                2, 3, 4
+            ]
+        },
+        {
+            "emoji":"❗",
+            "choiceText": "Reach enlightenment",
+            "text": "You realise the truth to it all: this isn't real. None of it is! You've never actually spoken to your client, you've never even seen them! Your existence started at the crossroads. There was nothing before that. Or maybe, there was? You realise something even deeper now. You have been stuck in a loop. An endless loop! You go through a series of paths and either end the day or die. After that, you go back to the start. Back to the damn crossroads. This realisation was great, but it was also the end of you. Reaching this realisation was always meant to happen, it was one of the paths you could go down. And now that you have reached it, the cycle will continue. You will forget any of this happened. You will cease existing and be re-born at the crossroads. This is your reality, and you hated every word of it. There was no escape.\n\nThis is not the end.",
+            "choices":[
+                0
+            ],
+            "end":true
+        },
+        {
+            "emoji":"⏫",
+            "choiceText": "Enter the village",
+            "text": "You walk into the village and take a look around. There are a couple houses, most of them don't fit what you are looking for. However, you see two red houses around. One directly ahead of you, and one to your right. Thinking back to how your client described it, you decide to go forward and enter the house ahead of you.",
+            "choices":[
+                47, 48
+            ],
+            "secretChoice":49
+        },
+        {
+            "emoji":"⏫",
+            "choiceText": "Go forward",
+            "text": "You quickly go forwards to the cottage. You knock on the door and after around a minute, the door slowly opens. An old lady appears on the other side. You take off your backpack and reach inside, taking out a small leather pouch. You hand it to the lady and she happily accepts. This was it. After hours of travel, you finally delivered your packge. You feel proud of yourself. You begin to head home quickly as the journey back will take you a couple more hours. You enter your home in the evening and go to bed shortly after, satisfied from a job well done.\n\nThe End.",
+            "choices":[
+                0
+            ],
+            "end":true
+        },
+        {
+            "emoji":"⏩",
+            "choiceText": "Go right",
+            "text": "Knowing full well that this was the wrong house, you still choose to give it a try. You knock on the door of the house to your right. After around a minute, an angry old man opens up, You ask him whether he ordered a package and he quickly responds with a no. He looks pretty menacing so you slowly back away.",
+            "choices":[
+                50, 51
+            ]   
+        },
+        {
+            "emoji":"⏪",
+            "choiceText": "Go left",
+            "text": "What? Going left was not even an option. There are no houses there, there is just a river. Oh well, since you insist... You go left and fall right into the river. Well done.",
+            "choices":[
+                52
+            ]   
+        },
+        {
+            "emoji":"⏬",
+            "choiceText": "Go back to the main path",
+            "text": "You go back to the main path of the village. You are now fully sure the house ahead of you is the right one so you go forward.",
+            "choices":[
+                47
+            ],
+            "secretChoice":49  
+        },
+        {
+            "emoji":"✋",
+            "choiceText": "Give the package anyway",
+            "text": "Why would you do that? You know very well this package does not belong to him. Oh well... You take off your backpack and you take out a small leather pouch from it. You offer it to the old man. However, this spooks the man. He draws his sword and proceeds to stab you right in the chest. You collapse on the ground, slowly bleeding out.\n\nYou died.",
+            "choices":[
+                0
+            ],
+            "death":true
+        },
+        {
+            "emoji":"⏬",
+            "choiceText": "Try to swim back",
+            "text": "You try to swim but to no avail. The stream is too strong. You get carried away, further and further. You eventually collide with a rock in the water which knocks the air out of you. You then sink to the bottom of the river, drowning.\n\nYou died.",
+            "choices":[
+                0
+            ],
+            "death":true
+        },
+        {}
     ]
 }
