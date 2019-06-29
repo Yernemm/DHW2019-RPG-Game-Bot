@@ -32,7 +32,8 @@
             "text": "Your client was clearly asking too much of you. Sure, you can deliver packages to any place in the land but having to make a choice? That is too much for anyone to ask for. It's completely unheard of! Probably even illegal! You trace back your each and every step until you reach your client's home. By the time you reach it, however, he sun has already set. An upper-floor window is still lit-up so you assume your client is still awake. You are furious and ready to verbally present the most detailed complaint of your career. This client had the audacity to force you into making a choice afterall. Your fist is clenched with all your might as you begin raising your arm before the client's front door. You pull your fist back and prepare for the most vigorous door-knocking of your life.",
             "choices":[
                 7, 8
-            ]
+            ],
+            "secretChoice": 33
         },
         {
             "emoji": "⏩",
@@ -237,7 +238,7 @@
         {
             "emoji":"⏫",
             "choiceText": "Keep going",
-            "text": "ono",
+            "text": "You keep walking along the road. You feel like you are approaching your destination. Sure enough, you enter a village.",
             "choices":[
                 1
             ]
@@ -275,6 +276,88 @@
                 0
             ],
             "end": true
+        },
+        {
+            "emoji":"💥",
+            "choiceText": "Knock the door down",
+            "text": "Your fist flies forward like a rocket ship. The door explodes on contact. Shards of wood go flying in all directions. The bang of the explosion forces flocks of birds to fly from nearby trees. You wait for the dust to settle to see a figure emerging from the other side. It's her: your client. You see her reaching for something on her side.",
+            "choices":[
+                34, 35
+            ]
+        },
+        {
+            "emoji":"👊",
+            "choiceText": "Punch her",
+            "text": "Nobody can win against you. Your punches are limitless. You are invincible! Or at least, so you thought... You raise your fist and launch it at the client. In a split-second, she draws her sword and slices your hand. Your hand is completely severed and drops to the floor. The client kicks you down and executes you without hesitation.\n\nYou died.",
+            "choices":[
+                0
+            ]
+        },
+        {
+            "emoji":"👊",
+            "choiceText": "Run home",
+            "text": "This can't be good. You watch your client slowly draw her sword and point it right at you. In complete panic, you turn right around and run home. The client doesn't bother with cowards like you. She sheathes her sword and walks back to her room.",
+            "choices":[
+                39
+            ]
+        },
+        {
+            "emoji":"🏠",
+            "choiceText": "Go home",
+            "text": "You realise that whatever happened to her, she probably does not want to speak to you. It is pretty late afterall, not many people would open doors from unexpected visitors at this time of night. You turn back and walk along the familiar path home. It's gotten quite cold by now so you begin to hurry. After a somewhat long walk home, you arrive at the front door.",
+            "choices":[
+                39
+            ]
+        },
+        {
+            "emoji":"⏬",
+            "choiceText": "Check the windows",
+            "text": "You take a step back and examine the windows. All of them are dark. You were certain that at least one of them was lit up when you walked up here. Maybe she went to sleep in the time it took for you to knock? Maybe she is ignoring you, or trying to hide from you. You're not sure what to do about this.",
+            "choices":[
+                36,38
+            ]
+        },
+        {
+            "emoji":"👀",
+            "choiceText": "Keep waiting",
+            "text": "You wait. You keep waiting. And after you're done waiting, you wait some more. Half an hour passes, than an hour. After a couple more hours, you begin to feel hungry.",
+            "choices":[
+                36,42
+            ]
+        },
+        {
+            "emoji":"🏠",
+            "choiceText": "Enter your home",
+            "text": "You enter your warm home. The fact you failed your delivery does not matter to you. You are safe and warm. Seeing how late it is, you decide to go to sleep and hope your next delivery goes better.\n\nThe End.",
+            "choices":[
+                0
+            ],
+            "end":true
+        },
+        {
+            "emoji":"👟",
+            "choiceText": "Keep walking",
+            "text": "After a long introspective walk, you finally arrive at your home. Shivering from the cold, you enter.",
+            "choices":[
+                39
+            ]
+        },
+        {
+            "emoji":"❓",
+            "choiceText": "Ponder your existence",
+            "text": "You keep thinking about the universe, the stars, everything. You realise you are completely insignificant in the vastness of the universe. Your existence is virtually negligible. You are but a particle stuck to a piece of dust, floating through the galaxy. Your entire life is worth nothing in the history of the planet, the solar system, galaxy, the universe. You feel yourself ascending as you realise what this really is.",
+            "choices":[
+                1
+            ]
+        },
+        {
+            "emoji":"👀",
+            "choiceText": "Wait even longer",
+            "text": "You wait some more. You continue waiting for as long as you physically can. Minutes turn to hours. Hours turn to days. You don't sit down, you don't sleep, you just stand there, waiting. After an eternity, you finally collapse. You haven't eaten or drinked anything in a week. You starve.\n\nYou died.",
+            "choices":[
+                0
+            ],
+            "death":true
         }
     ]
 }
