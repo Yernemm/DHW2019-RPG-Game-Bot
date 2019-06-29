@@ -30,7 +30,7 @@
         {
             "emoji": "⏬",
             "choiceText": "Turn back.",
-            "text": "Your client was clearly asking too much of you. Sure, you can deliver packages to any place in the land but having to make a choice? That is too much for anyone to ask for. It's completely unheard of! Probably even illegal! You trace back your each and every step until you reach your client's home. By the time you reach it, however, he sun has already set. An upper-floor window is still lit-up so you assume your client is still awake. You are furious and ready to verbally present the most detailed complaint of your career. This client had the audacity to force you into making a choice afterall. Your fist is clenched with all your might as you begin raising your arm before the client's front door. You pull your fist back and prepare for the most vigorous door-knocking of your life.",
+            "text": "Your client was clearly asking too much of you. Sure, you can deliver packages to any place in the land but having to make a choice? That is too much for anyone to ask for. It's completely unheard of! Probably even illegal! You trace back your each and every step until you reach your client's home. By the time you reach it, however, the sun has already set. An upper-floor window is still lit-up so you assume your client is still awake. You are furious and ready to verbally present the most detailed complaint of your career. This client had the audacity to force you into making a choice afterall. Your fist is clenched with all your might as you begin raising your arm before the client's front door. You pull your fist back and prepare for the most vigorous door-knocking of your life.",
             "choices":[
                 7, 8
             ],
@@ -410,7 +410,7 @@
             "text": "Knowing full well that this was the wrong house, you still choose to give it a try. You knock on the door of the house to your right. After around a minute, an angry old man opens up, You ask him whether he ordered a package and he quickly responds with a no. He looks pretty menacing so you slowly back away.",
             "choices":[
                 50, 51
-            ]   
+            ]
         },
         {
             "emoji":"⏪",
@@ -418,7 +418,7 @@
             "text": "What? Going left was not even an option. There are no houses there, there is just a river. Oh well, since you insist... You go left and fall right into the river. Well done.",
             "choices":[
                 52
-            ]   
+            ]
         },
         {
             "emoji":"⏬",
@@ -427,7 +427,7 @@
             "choices":[
                 47
             ],
-            "secretChoice":49  
+            "secretChoice":49
         },
         {
             "emoji":"✋",
@@ -446,6 +446,6 @@
                 0
             ],
             "death":true
-        }        
+        }
     ]
 }
