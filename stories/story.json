@@ -62,17 +62,17 @@
         {
             "emoji": "🚪",
             "choiceText": "Knock on the door",
-            "text": "",
+            "text": "*Knock knock knock*. You wait patiently for someone to open the door. Minutes go by and nobody answers. Your patience begins to run out...",
             "choices":[
-                1
+                36, 37, 38
             ]
         },
         {
             "emoji": "🏠",
             "choiceText": "Turn away and go home",
-            "text": "",
+            "text": "You suddenly change your mind. Maybe your anger was unreasonable? Maybe forcing someone to make choices wasn't a crime afterall? Irregardles of the reason, you have a change of heart. You lower your fist and slowly turn around. You walk back down the path, looking behind you one last time. You failed in delivering your package but this day was too much to take in straight away. You walk down the familiar path. You shudder in the night-time breeze; you can't wait until you get someplace warm. You look up at the stars as you walk which remind you of your role in this universe. Yet, you keep walking.",
             "choices":[
-                1
+                40, 41
             ]
         },
         {
@@ -291,10 +291,11 @@
             "text": "Nobody can win against you. Your punches are limitless. You are invincible! Or at least, so you thought... You raise your fist and launch it at the client. In a split-second, she draws her sword and slices your hand. Your hand is completely severed and drops to the floor. The client kicks you down and executes you without hesitation.\n\nYou died.",
             "choices":[
                 0
-            ]
+            ],
+            "death": true
         },
         {
-            "emoji":"👊",
+            "emoji":"🏃",
             "choiceText": "Run home",
             "text": "This can't be good. You watch your client slowly draw her sword and point it right at you. In complete panic, you turn right around and run home. The client doesn't bother with cowards like you. She sheathes her sword and walks back to her room.",
             "choices":[
