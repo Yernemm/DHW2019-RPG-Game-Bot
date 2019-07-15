@@ -22,7 +22,7 @@
         {
             "emoji": "⏪",
             "choiceText": "Go left.",
-            "text": "'I've made the right choice.' You thought to yourself. As you wandered by the winding stream, you started to wonder about nature and life and the universe itself. Nature often has this effect on you. You admire the beautiful colours of Autumn trees, swaying in the breeze. You look up at the cloudless sky, dotted with birds. You begin to envy their unparalleled freedom. But you remember that there's a reason you are here: to devliver the package. You slowly begin to focus your mind on the task.",
+            "text": "'I've made the right choice.' You thought to yourself. As you wandered by the winding stream, you started to wonder about nature and life and the universe itself. Nature often has this effect on you. You admire the beautiful colours of Autumn trees, swaying in the breeze. You look up at the cloudless sky, dotted with birds. You begin to envy their unparalleled freedom. But you remember that there's a reason you are here: to deliver the package. You slowly begin to focus your mind on the task.",
             "choices": [
                 5, 6
             ]
@@ -30,7 +30,7 @@
         {
             "emoji": "⏬",
             "choiceText": "Turn back.",
-            "text": "Your client was clearly asking too much of you. Sure, you can deliver packages to any place in the land but having to make a choice? That is too much for anyone to ask for. It's completely unheard of! Probably even illegal! You trace back your each and every step until you reach your client's home. By the time you reach it, however, the sun has already set. An upper-floor window is still lit-up so you assume your client is still awake. You are furious and ready to verbally present the most detailed complaint of your career. This client had the audacity to force you into making a choice afterall. Your fist is clenched with all your might as you begin raising your arm before the client's front door. You pull your fist back and prepare for the most vigorous door-knocking of your life.",
+            "text": "Your client was clearly asking too much of you. Sure, you can deliver packages to any place in the land but having to make a choice? That is too much for anyone to ask for. It's completely unheard of! Probably even illegal! You trace back your each and every step until you reach your client's home. By the time you reach it, however, the sun has already set. An upper-floor window is still lit-up, so you assume your client is still awake. You are furious and ready to verbally present the most detailed complaint of your career. This client had the audacity to force you into making a choice after all. Your fist is clenched with all your might as you begin raising your arm before the client's front door. You pull your fist back and prepare for the most vigorous door-knocking of your life.",
             "choices":[
                 7, 8
             ],
@@ -39,7 +39,7 @@
         {
             "emoji": "⏩",
             "choiceText": "Go right.",
-            "text": "Just as you step towards the left route, you get a sudden surge of courage and determination. You stop yourself mid-stride. 'Nothing comes easy in life.' You think to yourself, now more certain than ever that your goal must be down the hard route. Of course it would be! No real adventure ever goes through the quiet and peaceful roads! The only **true** adventure must be down the harsh, unforgiving path, most certainly filled with traps, monsters, and monster traps. You take a step back, turn to face the danger head-on, and run with all your might. You hear the overly-dramatic adventuring music kicking in as you sprint through your adventurous montage sequence. Just then, the music suddenly stops as you spot a group of bandits just metres ahead. You are too determined to let this stop you. Without hesitation, you approach the bandits with your fists raised.",
+            "text": "Just as you step towards the left route, you get a sudden surge of courage and determination. You stop yourself mid-stride. 'Nothing comes easy in life.' You think to yourself, now more certain than ever that your goal must be down the hard route. Of course it would be! No real adventure ever goes through the quiet and peaceful roads! The only **true** adventure must be down the harsh, unforgiving path, most certainly filled with traps, monsters, and monster traps. You take a step back, turn to face the danger head-on, and run with all your might. You hear the overly dramatic adventuring music kicking in as you sprint through your adventurous montage sequence. Just then, the music suddenly stops as you spot a group of bandits just meters ahead. You are too determined to let this stop you. Without hesitation, you approach the bandits with your fists raised.",
             "choices":[
                 9, 10, 11
             ]
@@ -47,7 +47,7 @@
         {
             "emoji": "⏫",
             "choiceText": "Focus and keep moving",
-            "text": "Of course, you have to focus on the task at hand. You have to deliver the package. You keep walking along the path, admiring the nature around you. After a brief walk, you reach a village. This must be it! Of course, going left was definitely the way to go. She didn't specify which way becacue nobody in their right mind would turn right at that point! Confident in yourself, you enter the village.",
+            "text": "Of course, you have to focus on the task at hand. You have to deliver the package. You keep walking along the path, admiring the nature around you. After a brief walk, you reach a village. This must be it! Of course, going left was definitely the way to go. She didn't specify which way because nobody in their right mind would turn right at that point! Confident in yourself, you enter the village.",
             "choices":[
                 46
             ]
@@ -71,7 +71,7 @@
         {
             "emoji": "🏠",
             "choiceText": "Turn away and go home",
-            "text": "You suddenly change your mind. Maybe your anger was unreasonable? Maybe forcing someone to make choices wasn't a crime afterall? Irregardles of the reason, you have a change of heart. You lower your fist and slowly turn around. You walk back down the path, looking behind you one last time. You failed in delivering your package but this day was too much to take in straight away. You walk down the familiar path. You shudder in the night-time breeze; you can't wait until you get someplace warm. You look up at the stars as you walk which remind you of your role in this universe. Yet, you keep walking.",
+            "text": "You suddenly change your mind. Maybe your anger was unreasonable? Maybe forcing someone to make choices wasn't a crime after all? Regardless of the reason, you have a change of heart. You lower your fist and slowly turn around. You walk back down the path, looking behind you one last time. You failed in delivering your package, but this day was too much to take in straight away. You walk down the familiar path. You shudder in the night-time breeze; you can't wait until you get someplace warm. You look up at the stars as you walk which remind you of your role in this universe. Yet, you keep walking.",
             "choices":[
                 40, 41
             ]
@@ -79,7 +79,7 @@
         {
             "emoji": "🏃",
             "choiceText": "Retreat",
-            "text": "You realise that trying to fight a group of bandits unarmed will not end well. You lower your fists and slowly back away. You backtrack your every step. One by one. Until you end up exactly right in front of the split in the road again. Let's try this again, shall we? *You stare down both roads. The road to your right enters a deep, dark forest. The road to your left leads you down by a gentle stream. Not knowing which one will lead you to the recipient, you head down the left route as it is clearly safer and much more pleasant.*",
+            "text": "You realize that trying to fight a group of bandits unarmed will not end well. You lower your fists and slowly back away. You backtrack your every step. One by one. Until you end up exactly right in front of the split in the road again. Let's try this again, shall we? *You stare down both roads. The road to your right enters a deep, dark forest. The road to your left leads you down by a gentle stream. Not knowing which one will lead you to the recipient, you head down the left route as it is clearly safer and much more pleasant.*",
             "choices":[
                 2, 3
             ]
@@ -87,7 +87,7 @@
         {
             "emoji": "👟",
             "choiceText": "Sneak past the bandits",
-            "text": "Realising that you are outnumbered and unarmed, you realise that fighting is probably not a good idea. You have to get past them somehow though and the only other option you think of is sneaking. You crouch down and slowly make your way forward. You think the bandits may turn around and see you.",
+            "text": "Realizing that you are outnumbered and unarmed, you realize that fighting is probably not a good idea. You have to get past them somehow though and the only other option you think of is sneaking. You crouch down and slowly make your way forward. You think the bandits may turn around and see you.",
             "choices":[
                 19, 20
             ]
@@ -95,7 +95,7 @@
         {
             "emoji": "👊",
             "choiceText": "Punch the bandits",
-            "text": "You pull back your fist, aiming it right at one of the bandits' head. Like a slingshot, your fist jolts forward and collides with your enemy's head. As it connects, you feel the warmth of the man's cheek as the soft tissue absorbs the force of the punch, only for your fist to follow through and collide with his jaw bone. Stunned, the man stumbles away from you. There are three more bandits and they are not happy about what you've done to their friend. Realising your mistake, you run forward right past them to continue on the journey.",
+            "text": "You pull back your fist, aiming it right at one of the bandits' head. Like a slingshot, your fist jolts forward and collides with your enemy's head. As it connects, you feel the warmth of the man's cheek as the soft tissue absorbs the force of the punch, only for your fist to follow through and collide with his jawbone. Stunned, the man stumbles away from you. There are three more bandits and they are not happy about what you've done to their friend. Realizing your mistake, you run forward right past them to continue on the journey.",
             "choices":[
                 21
             ],
@@ -104,7 +104,7 @@
         {
             "emoji": "👊",
             "choiceText": "Keep on fighting",
-            "text": "Wait, really? You you actually want to take on three armoured bandits as an unarmed courier? Alright then... As you fight, you begin to realise certain details about the bandits. They sure are wearing expensive-looking armour. Their swords are also surprisingly sharp. Then, the realisation strikes you harder than your enemy's sword. They weren't bandits afterall! They were-\n\nAnd then everything faded to black.",
+            "text": "Wait, really? You actually want to take on three armoured bandits as an unarmed courier? Alright then... As you fight, you begin to realize certain details about the bandits. They sure are wearing expensive looking armour. Their swords are also surprisingly sharp. Then, the realization strikes you harder than your enemy's sword. They weren't bandits after all! They were-\n\nAnd then everything faded to black.",
             "choices":[
                 13
             ]
@@ -112,7 +112,7 @@
         {
             "emoji": "❓",
             "choiceText": "What happened?",
-            "text": "You slowly awaken to the sound of horses pulling a cart along cobbled streets. Your hands are bound. You look around at the others in the wagon. One of the men is finely dressed, and gagged. You look up at a fair-haired man, wearing chainmail and a blue cloth. He begins to speak.\n\n'Hey, you. You're finally awake. You were trying to cross the border, right? Walked right into that Imperial ambush, same as us, and that thief over there.'",
+            "text": "You slowly awaken to the sound of horses pulling a cart along cobbled streets. Your hands are bound. You look around at the others in the wagon. One of the men is finely dressed and gagged. You look up at a fair-haired man, wearing chainmail and a blue cloth. He begins to speak.\n\n\"Hey, you. You're finally awake. You were trying to cross the border, right? Walked right into that Imperial ambush, same as us, and that thief over there.\"",
             "choices":[
                 14, 15, 16, 17
             ]
@@ -120,7 +120,7 @@
         {
             "emoji": "🔪",
             "choiceText": "Stab the prisoners",
-            "text": "You tried stabbing the other prisoners, only to find out you have no weapon! The guards realise what you tried to do and kill you on the spot by feeding you to the wagon horses.",
+            "text": "You tried stabbing the other prisoners, only to find out you have no weapon! The guards realize what you tried to do and kill you on the spot by feeding you to the wagon horses.",
             "choices":[
                 18
             ],
@@ -138,7 +138,7 @@
         {
             "emoji": "🏃",
             "choiceText": "Run away",
-            "text": "You try to run from the encounter but you can't run away from a trainer battle! Ralof deploys his shiny Alduin, which then proceedes to devour you. You fainted.",
+            "text": "You try to run from the encounter, but you can't run away from a trainer battle! Ralof deploys his shiny Alduin, which then proceeds to devour you. You fainted.",
             "choices":[
                 18
             ],
@@ -165,7 +165,7 @@
         {
             "emoji": "👟",
             "choiceText": "Sneak slowly",
-            "text": "Slow and steady. You walk off the path and slowly make your way past the trees. You naviagate around the group of bandits slowly. It feels like it's taking forever. Out of the corner of your eye, you sense movement. You turn your head slowly to see one of the bandits walking towards you.",
+            "text": "Slow and steady. You walk off the path and slowly make your way past the trees. You navigate around the group of bandits slowly. It feels like it's taking forever. Out of the corner of your eye, you sense movement. You turn your head slowly to see one of the bandits walking towards you.",
             "choices":[
                 22, 21
             ]
@@ -173,7 +173,7 @@
         {
             "emoji": "🏃",
             "choiceText": "Hurry up",
-            "text": "You quickly move off the path to hide behind a tree. You hop from tree to tree, rapidly approaching your goal. Until... *crack*. You step on a twig (classic). The bandits quickly realise what's going on and walk towards you at an alarming speed.",
+            "text": "You quickly move off the path to hide behind a tree. You hop from tree to tree, rapidly approaching your goal. Until... *crack*. You step on a twig (classic). The bandits quickly realize what's going on and walk towards you at an alarming speed.",
             "choices":[
                 11, 21
             ]
@@ -181,7 +181,7 @@
         {
             "emoji": "🏃",
             "choiceText": "Make a run for it",
-            "text": "You immediately begin running from your current position. Sure, you made it past the bandits, but they're still after you. As luck would have it, one of them happens to have a bow. I'm sure you'll be fine though, they're all just common bandits, she can't aim... Oh, she is a veteran military archer... And hunts daily just for fun. Well, looks like you might be in trouble then. You're so close, 30 more metres and you will reach a turn in the road where you can break line of sight. You hear the archer releasing an arrow from her bow. Instinctively, you dodge to the right to avoid the projectile.",
+            "text": "You immediately begin running from your current position. Sure, you made it past the bandits, but they're still after you. As luck would have it, one of them happens to have a bow. I'm sure you'll be fine though, they're all just common bandits, she can't aim... Oh, she is a veteran military archer... And hunts daily just for fun. Well, looks like you might be in trouble then. You're so close, 30 more meters and you will reach a turn in the road where you can break line of sight. You hear the archer releasing an arrow from her bow. Instinctively, you dodge to the right to avoid the projectile.",
             "choices":[
                 24, 25
             ],
@@ -190,7 +190,7 @@
         {
             "emoji": "👀",
             "choiceText": "Wait it out",
-            "text": "The man walks up to the tree, and begins looking around. He still doesn't see you. You feel your heart racing. If you make any sound whatsoever, he'll know something's up instantly. Time is running out as you begin evaluating your options...",
+            "text": "The man walks up to the tree and begins looking around. He still doesn't see you. You feel your heart racing. If you make any sound whatsoever, he'll know something's up instantly. Time is running out as you begin evaluating your options...",
             "choices":[
                 21, 23
             ],
@@ -247,7 +247,7 @@
         {
             "emoji":"⏪",
             "choiceText": "Dodge left",
-            "text": "You want to die? Why? I'm telling you, you will be shot by the arrow if you do this. You won't deliver the package, you won't reach your goal, you won't make it back home safely to your family. Please, you don't have to do this. Just dodge right and you'll be safe. Do it for me, for your family. Please.",
+            "text": "You want to die? Why? I'm telling you; you will be shot by the arrow if you do this. You won't deliver the package, you won't reach your goal, you won't make it back home safely to your family. Please, you don't have to do this. Just dodge right and you'll be safe. Do it for me, for your family. Please.",
             "choices":[
                 25, 30
             ]
@@ -264,7 +264,7 @@
         {
             "emoji":"🏃",
             "choiceText": "Run away",
-            "text": "You quickly turn around and run away. The bandits are even more shocked by this. Stunned, even! You betrayed their trust and they're heart-broken. Using this opportunity, you reach the turn in the road and escape to safety.",
+            "text": "You quickly turn around and run away. The bandits are even more shocked by this. Stunned, even! You betrayed their trust and they're heartbroken. Using this opportunity, you reach the turn in the road and escape to safety.",
             "choices":[
                 28
             ]
@@ -306,7 +306,7 @@
         {
             "emoji":"🏠",
             "choiceText": "Go home",
-            "text": "You realise that whatever happened to her, she probably does not want to speak to you. It is pretty late afterall, not many people would open doors from unexpected visitors at this time of night. You turn back and walk along the familiar path home. It's gotten quite cold by now so you begin to hurry. After a somewhat long walk home, you arrive at the front door.",
+            "text": "You realize that whatever happened to her, she probably does not want to speak to you. It is pretty late after all, not many people would open doors from unexpected visitors at this time of night. You turn back and walk along the familiar path home. It's gotten quite cold by now, so you begin to hurry. After a somewhat long walk home, you arrive at the front door.",
             "choices":[
                 39
             ]
@@ -322,7 +322,7 @@
         {
             "emoji":"👀",
             "choiceText": "Keep waiting",
-            "text": "You wait. You keep waiting. And after you're done waiting, you wait some more. Half an hour passes, than an hour. After a couple more hours, you begin to feel hungry.",
+            "text": "You wait. You keep waiting. And after you're done waiting, you wait some more. Half an hour passes, then an hour. After a couple more hours, you begin to feel hungry.",
             "choices":[
                 36,42
             ]
@@ -347,7 +347,7 @@
         {
             "emoji":"❓",
             "choiceText": "Ponder your existence",
-            "text": "You keep thinking about the universe, the stars, everything. You realise you are completely insignificant in the vastness of the universe. Your existence is virtually negligible. You are but a particle stuck to a piece of dust, floating through the galaxy. Your entire life is worth nothing in the history of the planet, the solar system, galaxy, the universe. You feel yourself ascending as you realise what this really is.",
+            "text": "You keep thinking about the universe, the stars, everything. You realize you are completely insignificant in the vastness of the universe. Your existence is virtually negligible. You are but a particle stuck to a piece of dust, floating through the galaxy. Your entire life is worth nothing in the history of the planet, the solar system, galaxy, the universe. You feel yourself ascending as you realize what this really is.",
             "choices":[
                 45
             ]
@@ -355,7 +355,7 @@
         {
             "emoji":"👀",
             "choiceText": "Wait even longer",
-            "text": "You wait some more. You continue waiting for as long as you physically can. Minutes turn to hours. Hours turn to days. You don't sit down, you don't sleep, you just stand there, waiting. After an eternity, you finally collapse. You haven't eaten or drinked anything in a week. You starve.\n\nYou died.",
+            "text": "You wait some more. You continue waiting for as long as you physically can. Minutes turn to hours. Hours turn to days. You don't sit down, you don't sleep, you just stand there, waiting. After an eternity, you finally collapse. You haven't eaten or drunk anything in a week. You starve.\n\nYou died.",
             "choices":[
                 0
             ],
@@ -380,7 +380,7 @@
         {
             "emoji":"❗",
             "choiceText": "Reach enlightenment",
-            "text": "You realise the truth to it all: this isn't real. None of it is! You've never actually spoken to your client, you've never even seen them! Your existence started at the crossroads. There was nothing before that. Or maybe, there was? You realise something even deeper now. You have been stuck in a loop. An endless loop! You go through a series of paths and either end the day or die. After that, you go back to the start. Back to the damn crossroads. This realisation was great, but it was also the end of you. Reaching this realisation was always meant to happen, it was one of the paths you could go down. And now that you have reached it, the cycle will continue. You will forget any of this happened. You will cease existing and be re-born at the crossroads. This is your reality, and you hated every word of it. There was no escape.\n\nThis is not the end.",
+            "text": "You realize the truth to it all: this isn't real. None of it is! You've never actually spoken to your client; you've never even seen them! Your existence started at the crossroads. There was nothing before that. Or maybe, there was? You realize something even deeper now. You have been stuck in a loop. An endless loop! You go through a series of paths and either end the day or die. After that, you go back to the start. Back to the damn crossroads. This realization was great, but it was also the end of you. Reaching this realization was always meant to happen, it was one of the paths you could go down. And now that you have reached it, the cycle will continue. You will forget any of this happened. You will cease existing and be re-born at the crossroads. This is your reality, and you hated every word of it. There was no escape.\n\nThis is not the end.",
             "choices":[
                 0
             ],
@@ -398,7 +398,7 @@
         {
             "emoji":"⏫",
             "choiceText": "Go forward",
-            "text": "You quickly go forwards to the cottage. You knock on the door and after around a minute, the door slowly opens. An old lady appears on the other side. You take off your backpack and reach inside, taking out a small leather pouch. You hand it to the lady and she happily accepts. This was it. After hours of travel, you finally delivered your packge. You feel proud of yourself. You begin to head home quickly as the journey back will take you a couple more hours. You enter your home in the evening and go to bed shortly after, satisfied from a job well done.\n\nThe End.",
+            "text": "You quickly go forwards to the cottage. You knock on the door and after around a minute, the door slowly opens. An old lady appears on the other side. You take off your backpack and reach inside, taking out a small leather pouch. You hand it to the lady and she happily accepts. This was it. After hours of travel, you finally delivered your package. You feel proud of yourself. You begin to head home quickly as the journey back will take you a couple more hours. You enter your home in the evening and go to bed shortly after, satisfied from a job well done.\n\nThe End.",
             "choices":[
                 0
             ],
@@ -407,7 +407,7 @@
         {
             "emoji":"⏩",
             "choiceText": "Go right",
-            "text": "Knowing full well that this was the wrong house, you still choose to give it a try. You knock on the door of the house to your right. After around a minute, an angry old man opens up, You ask him whether he ordered a package and he quickly responds with a no. He looks pretty menacing so you slowly back away.",
+            "text": "Knowing full well that this was the wrong house, you still choose to give it a try. You knock on the door of the house to your right. After around a minute, an angry old man opens up. You ask him whether he ordered a package and he quickly responds with a no. He looks pretty menacing so you slowly back away.",
             "choices":[
                 50, 51
             ]
@@ -423,7 +423,7 @@
         {
             "emoji":"⏬",
             "choiceText": "Go back to the main path",
-            "text": "You go back to the main path of the village. You are now fully sure the house ahead of you is the right one so you go forward.",
+            "text": "You go back to the main path of the village. You are now fully sure the house ahead of you is the right one, so you go forward.",
             "choices":[
                 47
             ],
