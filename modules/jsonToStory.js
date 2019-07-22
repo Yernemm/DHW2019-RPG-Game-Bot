@@ -3,7 +3,7 @@ const emojis = require('./emojis.js');
 
 const path = require( "path" );
 const fs = require('fs');
-const dir = path.resolve(__dirname, '../stories/');
+const dir = '../stories/';
 
 var secretChoices = [];
 var secretChoiceIds = [];
@@ -11,7 +11,7 @@ var secretChance = 0.1;
 
 function load(storyName){
     //Load the json file
-    let storyPath = dir + storyName;
+    let storyPath = path.resolve(__dirname, dir, storyName);
     let storyObj = JSON.parse(fs.readFileSync(storyPath, 'utf8'));
     if(storyObj.secretChance) secretChance = storyObj.secretChance;
 
