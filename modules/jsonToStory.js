@@ -1,7 +1,7 @@
 const {Prompt} = require('./prompt.js');
 const emojis = require('./emojis.js');
 
-const dir = './stories/';
+const dir = '../stories/';
 const fs = require('fs');
 
 var secretChoices = [];
